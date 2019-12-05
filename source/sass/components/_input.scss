@@ -1,0 +1,145 @@
+// ======================================================
+// Components :: Inputs
+// ======================================================
+
+.form-custom {
+  margin-bottom: 20px;
+
+  .form-label {
+    color: $cl-darkgray-3;
+    font-weight: $font-weight-base;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .form-control {
+    border-width: 1px;
+    border-top-color: $cl-silver-5;
+    box-shadow: none;
+    color: $cl-secondary;
+    font-size: $font-size-medium - 1;
+    height: 48px;
+    padding: 10px 12px;
+    transition: none;
+
+    &::placeholder {
+      color: $cl-gray-9;
+    }
+
+    &:focus {
+      color: $cl-secondary;
+      background-color: $cl-white;
+      border-color: $cl-primary;
+      outline: none;
+      box-shadow: 0 0 0 .15rem transparent;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: $cl-lightgray-1;
+    }
+
+    // Modifier: Size
+
+    &--lg {
+      height: 57px;
+      padding: 12px 14px;
+      font-size: $font-size-large;
+      font-weight: 400;
+      border-radius: $border-radius-small;
+    }
+
+    &--sm {
+      height: 37px;
+      font-size: 1rem;
+      padding: 4px 12px;
+    }
+
+    &--xs {
+      height: 30px;
+      font-size: $font-size-small;
+      padding: 6px 9px;
+    }
+  }
+
+  // Feedback Validation
+
+  .valid-feedback {
+    width: 100%;
+    display: block;
+    margin-top: .25rem;
+    font-size: $font-size-small;
+    color: $cl-success;
+  }
+
+  .invalid-feedback {
+    width: 100%;
+    display: block;
+    margin-top: .25rem;
+    font-size: $font-size-small;
+    color: $cl-danger;
+  }
+
+  // Modifier: Validation Input
+
+  &.form-valid {
+    position: relative;
+
+    .form-control {
+      border-color: $cl-success;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    &:after {
+      content: '\f26b';
+      font-family: $font-icon;
+      font-size: 26px;
+      font-weight: 700;
+      color: $cl-success;
+      position: absolute;
+      right: 12px;
+      top: 32px;
+      z-index: 3;
+    }
+  }
+
+  &.form-invalid {
+    position: relative;
+
+    .form-control {
+      border-color: $cl-danger;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    &:after {
+      content: '\f136';
+      font-family: $font-icon;
+      font-size: 26px;
+      font-weight: 700;
+      color: $cl-danger;
+      position: absolute;
+      right: 12px;
+      top: 32px;
+      z-index: 3;
+    }
+  }
+
+  &.form-area {
+    .form-control {
+      height: auto;
+    }
+  }
+
+  .input-group {
+    .input-checkbox-custom,
+    .input-radio-custom {
+      margin: 0;
+    }
+  }
+}

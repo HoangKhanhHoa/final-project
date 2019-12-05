@@ -1,0 +1,57 @@
+// ======================================================
+// Components :: Fileupload
+// ======================================================
+
+.button-file-custom {
+  width: .1px;
+  height: .1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: z(under);
+}
+
+.file-label-custom {
+  padding: 0 10px;
+  font-size: 1rem;
+  line-height: 28px;
+  border: 1px solid $cl-lightgray-9;
+  border-radius: 2px;
+  display: inline-block;
+  cursor: pointer;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.input-group {
+  &-text {
+    padding: 10px 12px;
+  }
+
+  .custom-file {
+    height: 48px;
+
+    &-input {
+      height: 100%;
+    }
+
+    &-label {
+      height: 100%;
+      padding: 10px;
+      line-height: 2;
+
+      &:after {
+        height: 100%;
+        padding: 10px;
+        line-height: 2;
+      }
+    }
+  }
+
+  .button {
+    height: 48px;
+    border-radius: .25rem;
+  }
+}

@@ -1,0 +1,90 @@
+// ======================================================
+// Pages :: Sign Up
+// ======================================================
+
+.sign-up {
+  max-width: 432px;
+  margin: 10px auto;
+
+  &__card {
+    border-top: 3px solid $cl-primary;
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    &-header {
+      padding: 40px 20px 0;
+      text-align: center;
+      border-bottom: none;
+    }
+
+    &-body {
+      padding: 20px 30px 15px;
+    }
+  }
+
+  &__title,
+  &__option {
+    font-size: $font-size-large - 1;
+    font-weight: 300;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  &__password {
+    & > :first-child {
+      padding-right: 10px;
+    }
+
+    & > :last-child {
+      padding-left: 10px;
+    }
+  }
+
+  &__submit {
+    padding-top: 10px;
+  }
+
+  .button {
+    width: 100%;
+
+    .icon {
+      font-size: 21px;
+      line-height: 20px;
+    }
+  }
+
+  .facebook {
+    background-color: $cl-facebook;
+    border-color: $cl-facebook;
+  }
+
+  .google-plus {
+    background-color: $cl-google-plus;
+    border-color: $cl-google-plus;
+  }
+
+  &__social {
+    padding-bottom: 12px;
+  }
+
+  &__agreement {
+    margin-bottom: 15px;
+    padding-top: 15px;
+
+    .input-checkbox-custom {
+      display: inline-block;
+    }
+
+    a {
+      color: $cl-primary;
+      margin-left: 3px;
+      vertical-align: middle;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+  }
+}

@@ -1,0 +1,399 @@
+//-------------------------------------------------------
+//- Modules :: Inputs
+//-------------------------------------------------------
+
+h2 Input Basic
+
+.row
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field({
+            label: 'Input Text',
+            id: 'input-text',
+            type: 'text',
+          })
+      pre
+        code
+          | form
+          |   +group-input-field({
+          |     label: 'Input Text',
+          |     id: 'input-text',
+          |     type: 'text',
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field({
+            label: 'Input Text Placeholder',
+            id: 'input-text-placeholder',
+            type: 'text',
+            placeholder: 'Placeholder Input Field'
+          })
+      pre
+        code
+          | form
+          |   +group-input-field({
+          |     label: 'Input Text',
+          |     id: 'input-text',
+          |     type: 'text',
+          |     placeholder: 'Placeholder Input Field'
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field({
+            label: 'Input Email',
+            id: 'input-email',
+            type: 'email',
+          })
+      pre
+        code
+          | form
+          |   +group-input-field({
+          |     label: 'Input Email',
+          |     id: 'input-email',
+          |     type: 'email',
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field({
+            label: 'Input Password',
+            id: 'input-password',
+            type: 'password',
+          })
+      pre
+        code
+          | form
+          |   +group-input-field({
+          |     label: 'Input Password',
+          |     id: 'input-password',
+          |     type: 'password',
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field-readonly({
+            label: 'Input Readonly',
+            id: 'input-text-readonly',
+            type: 'text',
+            value: 'Readonly Input Field'
+          })
+      pre
+        code
+          | form
+          |   +group-input-field-readonly({
+          |     label: 'Input Readonly',
+          |     id: 'input-text-readonly',
+          |     type: 'text',
+          |     value: 'Readonly Input Field'
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field-disabled({
+            label: 'Input Disabled',
+            id: 'input-text-disabled',
+            type: 'text',
+            placeholder: 'Disabled Input Field'
+          })
+      pre
+        code
+          | form
+          |   +group-input-field-disabled({
+          |     label: 'Input Disabled',
+          |     id: 'input-text-disabled',
+          |     type: 'text',
+          |     value: 'Disabled Input Field'
+          |   })
+
+-
+  var inputSize = [
+    {type: 'text', label: 'Input Large', value: 'Large Input', size: 'lg'},
+    {type: 'text', label: 'Input Default', value: 'Default Input'},
+    {type: 'text', label: 'Input Small', value: 'Small Input', size: 'sm'},
+    {type: 'text', label: 'Input Extra Small', value: 'Extra Small Input', size: 'xs'},
+  ];
+
+h2 Input Size
+
+.row
+  each val in inputSize
+    .col-6
+      .code-example
+        .demo
+          form
+            +group-input-field({
+              label: val.label,
+              type: val.type,
+              value: val.value,
+              size: val.size,
+            })
+        pre
+          code
+            | form
+            |   +group-input-field({
+            |     label: '#{val.label}',
+            |     type: '#{val.type}',
+            |     value: '#{val.value}',
+            |     size: '#{val.size}',
+            |   })
+
+
+h2 Input Add-on
+
+.row
+  .col-6
+    .code-example
+      .demo
+        form
+          +input-add-on-before({
+            label: 'Input Add-on Before',
+            id: 'input-add-on',
+            type: 'text',
+          })
+      pre
+        code
+          | form
+          |   +input-add-on-before({
+          |     label: 'Input Add-on Before',
+          |     id: 'input-add-on',
+          |     type: 'text',
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +input-add-on-after({
+            label: 'Input Add-on After',
+            id: 'input-add-on-1',
+            type: 'text',
+            textAddon: '.00',
+          })
+      pre
+        code
+          | form
+          |   +input-add-on-after({
+          |     label: 'Input Add-on After',
+          |     id: 'input-add-on-1',
+          |     type: 'text',
+          |     textAddon: '.00',
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +input-add-on-checkbox({
+            label: 'Input Add-on Checkbox',
+            id: 'input-add-on-checkbox',
+            type: 'text',
+          })
+      pre
+        code
+          | form
+          |   +input-add-on-checkbox({
+          |     label: 'Input Add-on Checkbox',
+          |     id: 'input-add-on-checkbox',
+          |     type: 'text',
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +input-add-on-radio({
+            label: 'Input Add-on Radio',
+            id: 'input-add-on-radio',
+            type: 'text',
+          })
+      pre
+        code
+          | form
+          |   +input-add-on-radio({
+          |     label: 'Input Add-on Radio',
+          |     id: 'input-add-on-radio',
+          |     type: 'text',
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +input-add-on-button({
+            label: 'Input Add-on Button',
+            id: 'input-add-on-button',
+            type: 'text',
+            textAddon: 'Go!',
+          })
+      pre
+        code
+          | form
+          |   +input-add-on-button({
+          |     label: 'Input Add-on Button',
+          |     id: 'input-add-on-button',
+          |     type: 'text',
+          |     textAddon: 'Go!',
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +input-add-on-button-dropdown({
+            label: 'Input Add-on Button Dropdown',
+            id: 'input-add-on-button-dropdown',
+            type: 'text',
+            textAddon: 'Action',
+          })
+      pre
+        code
+          | form
+          |   +input-add-on-button-dropdown({
+          |     label: 'Input Add-on Button Dropdown',
+          |     id: 'input-add-on-button-dropdown',
+          |     type: 'text',
+          |     textAddon: 'Action',
+          |   })
+
+h2 Input Validation
+
+.row
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field-valid({
+            label: 'Success',
+            type: 'text'
+          })
+      pre
+        code
+          | form
+          |   +group-input-field-valid({
+          |     label: 'Success',
+          |     type: 'text'
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field-invalid({
+            label: 'Error',
+            type: 'text'
+          })
+      pre
+        code
+          | form
+          |   +group-input-field-invalid({
+          |     label: 'Error',
+          |     type: 'text'
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field-valid({
+            label: 'Success With Feedback',
+            type: 'text',
+            feedback: 'Looks good!'
+          })
+      pre
+        code
+          | form
+          |   +group-input-field-valid({
+          |     label: 'Success With Feedback',
+          |     type: 'text',
+          |     feedback: 'Looks good!'
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-input-field-invalid({
+            label: 'Error With Feedback',
+            type: 'text',
+            feedback: 'Please provide a valid.'
+          })
+      pre
+        code
+          | form
+          |   +group-input-field-invalid({
+          |     label: 'Error With Feedback',
+          |     type: 'text',
+          |     feedback: 'Please provide a valid.'
+          |   })
+
+  .col-6
+    .code-example
+      .demo
+        form
+          +input-add-on-before({
+            label: 'Input Add-on Success',
+            type: 'text',
+          })(class="form-valid")
+      pre
+        code
+          | form
+          |   +input-add-on-before({
+          |     label: 'Input Add-on Success',
+          |     type: 'text',
+          |   })(class="form-valid")
+  .col-6
+    .code-example
+      .demo
+        form
+          +input-add-on-before({
+            label: 'Input Add-on Error',
+            type: 'text',
+          })(class="form-invalid")
+      pre
+        code
+          | form
+          |   +input-add-on({
+          |     label: 'Input Add-on Error',
+          |     type: 'text',
+          |   })(class="form-invalid")
+
+h2 Textarea
+
+.row
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-textarea-field({
+            id: 'textarea-1',
+            label: 'Textarea',
+            rows: 5,
+          })
+      pre
+          code
+            | form
+            |   +group-input-field({
+            |     label: 'Textarea',
+            |     id: 'textarea-1',
+            |     rows: '5',
+            |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          +group-textarea-field({
+            id: 'textarea-2',
+            label: 'Textarea Disabled',
+            rows: 5,
+            disabled: true
+          })
+      pre
+          code
+            | form
+            |   +group-input-field({
+            |     label: 'Textarea Disabled',
+            |     id: 'textarea-2',
+            |     rows: '5',
+            |     disabled: true,
+            |   })

@@ -1,0 +1,121 @@
+extends modules/layout/_page-default
+
+block head
+  +head('Beagle')
+
+block main
+  +header('Invoice')
+  +rightSidebar()
+  +leftSidebar({
+    page: 'pages',
+    link: '13-page-invoice.html'
+  })
+  .page-content
+    .page-head
+      h2.invoice-title Invoice
+      nav(aria-label="breadcrumb" )
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href="#") Home
+          li.breadcrumb-item
+            a(href="#") Pages
+          li.breadcrumb-item
+            a(href="#") Invoice
+    .page-body.container-fluid
+      .row
+        .col-12
+          .invoice
+            .row.invoice__header
+              .col-sm-7
+                .invoice__logo
+              .col-sm-5
+                p.invoice__id Invoice #2308
+                p.invoice__date August 23, 2018
+            .row.invoice__data
+              .col-sm-5.invoice__person
+                p Kristopher Donny
+                p Developer and Designer
+                p donny@designer.co
+                p 661 Bubby Street
+                p United States
+              .col-sm-2.invoice__payment-direction
+                i.zmdi.zmdi-chevron-right
+              .col-sm-5.invoice__person
+                p Elliot Mark
+                p CEO at BLX
+                p ceoblx@company.co
+                p 839 Owagner Drive
+                p United States
+            .row
+              .col-lg-12
+                table.invoice__details
+                  tr
+                    th Description
+                    th Hour
+                    th Amount
+                  tr
+                    td.invoice__desc Web design (Etiam sagittis metus sit amet mauris gravida hendrerit)
+                    td.invoice__hours 60
+                    td.invoice__amount $4,200.00
+                  tr
+                    td.invoice__desc Responsive design (Etiam sagittis metus sit amet mauris gravida hendrerit)
+                    td.invoice__hours 10
+                    td.invoice__amount $1,500.00
+                  tr
+                    td.invoice__desc Logo design (Cras faucibus tincidunt elit id rhoncus.)
+                    td.invoice__hours 12
+                    td.invoice__amount $1,700.00
+                  tr
+                    td
+                    td.invoice__summary Subtotal
+                    td.invoice__amount $7,400,00
+                  tr
+                    td
+                    td.invoice__summary Discount (20%)
+                    td.invoice__amount $1,480,00
+                  tr
+                    td
+                    td.invoice__total Total
+                    td.invoice__amount-total $5,920
+            .row
+              .col-lg-12.invoice__payment-method
+                p Payment Method
+                p Credit card
+                p Credit card type: mastercard
+                p Number verification: 4256981387
+            .row
+              .col-lg-12.invoice__messages
+                p THANK YOU FOR CONTACTING US
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis massa nisl. Sed fringilla turpis id mi ultrices, et faucibus ipsum aliquam. Sed ut eros placerat, facilisis est eu, congue felis.
+            .row.invoice__company-infor
+              .col-lg-2.col-md-6.logo
+                img(src="../images/logo-symbol.png", alt="")
+              .col-lg-4.col-md-6.summary
+                p Beagle Company
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              .col-lg-3.col-sm-6.phone
+                ul
+                  li +1(535)-8999278
+                  li +1(656)-3558302
+              .col-lg-3.col-sm-6.email
+                ul
+                  li beagle@company.co
+                  li beagle@support.co
+            .row.invoice__footer
+              .col-lg-12
+                +buttons({
+                  text: 'Save PDF',
+                  type: 'secondary',
+                  size: 'xl'
+                })
+                +buttons({
+                  text: 'Print',
+                  type: 'secondary',
+                  size: 'xl'
+                })
+                +buttons({
+                  text: 'Pay now',
+                  type: 'primary',
+                  size: 'xl'
+                })
+

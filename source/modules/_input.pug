@@ -1,0 +1,199 @@
+//-------------------------------------------------------
+//- Modules :: Input Field
+//-------------------------------------------------------
+
+//- Input Field
+mixin input-field({ id, type, placeholder, value, size })
+  input.form-control(
+    class= size ? `form-control--${size}` : null
+    type= type ? type : 'text'
+    id= id ? id : null
+    value= value ? value : null
+    placeholder= placeholder ? placeholder : null
+  )&attributes(attributes)
+
+//- Group Input Field
+mixin group-input-field({ label, id, type, placeholder, size, value })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    +input-field({ id, type, placeholder, value, size })
+
+//- Group Input Field Required
+mixin group-input-field-required({ label, id, type, placeholder, size, value })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    +input-field({ label, id, type, placeholder, value, size })(
+      required
+    )
+
+//- Group Input Field Readonly
+mixin group-input-field-readonly({ label, id, type, placeholder, size, value })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    +input-field({ label, id, type, placeholder, value, size })(
+      readonly
+    )
+
+//- Group Input Field Disabled
+mixin group-input-field-disabled({ label, id, type, placeholder, size, value })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    +input-field({ label, id, type, placeholder, value, size })(
+      disabled
+    )
+
+//- Group Input Field Valid
+mixin group-input-field-valid({ label, id, type, placeholder, size, value, feedback })
+  .form-group.form-custom(
+    class="form-valid"
+  )&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    +input-field({ id, type, placeholder, value, size })
+    if feedback
+      div(
+        class="valid-feedback"
+      )= feedback
+
+//- Group Input Field Invalid
+mixin group-input-field-invalid({ label, id, type, placeholder, size, value, feedback })
+  .form-group.form-custom(
+    class="form-invalid"
+  )&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    +input-field({ id, type, placeholder, value, size })
+    if feedback
+      div(
+        class="invalid-feedback"
+      )= feedback
+
+//- Input Add-on Before
+mixin input-add-on-before({ label, id, type, placeholder, value, size, textAddon })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    .input-group
+      .input-group-prepend
+        span.input-group-text= textAddon ? textAddon : '@'
+      +input-field({ label, id, type, placeholder, value, size })
+
+//- Input Add-on After
+mixin input-add-on-after({ label, id, type, placeholder, value, size, textAddon })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    .input-group
+      +input-field({ label, id, type, placeholder, value, size })
+      .input-group-append
+        span.input-group-text= textAddon ? textAddon : '@'
+
+//- Input Add-on Checkbox
+mixin input-add-on-checkbox({ label, id, type, placeholder, value, size })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    .input-group
+      .input-group-prepend
+        .input-group-text
+          .input-checkbox-custom
+            input.checkbox-custom(
+              type="checkbox"
+              id="add-on-checkbox"
+            )
+            label.checkbox-label-custom(
+              for="add-on-checkbox"
+            )
+      +input-field({ label, id, type, placeholder, value, size })
+
+//- Input Add-on Radio
+mixin input-add-on-radio({ label, id, type, placeholder, value, size })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    .input-group
+      .input-group-prepend
+        .input-group-text
+          label.input-radio-custom(
+            for="add-on-radio"
+          )
+            input.radio-custom(
+              type="radio"
+              id="add-on-radio"
+            )
+            span.radio-label-custom
+      +input-field({ label, id, type, placeholder, value, size })
+
+//- Input Add-on Button
+mixin input-add-on-button({ label, id, type, placeholder, value, size, textAddon })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    .input-group
+      +input-field({ label, id, type, placeholder, value, size })
+      .input-group-append
+        button.btn.button.button--primary(
+          type="button"
+        )= textAddon ? textAddon : '@'
+
+//- Input Add-on Button
+mixin input-add-on-button-dropdown({ label, id, type, placeholder, value, size, textAddon })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    .input-group
+      +input-field({ label, id, type, placeholder, value, size })
+      .input-group-append
+        button.btn.button.button--primary(
+          class="dropdown-toggle"
+          type="button"
+          data-toggle="dropdown"
+        )= textAddon ? textAddon : '@'
+        .dropdown-menu
+          a.dropdown-item(href="#") Action
+          a.dropdown-item(href="#") Another action
+          a.dropdown-item(href="#") Something else here
+          .dropdown-divider
+          a.dropdown-item(href="#") Separated link
+
+//- Textarea Field
+mixin group-textarea-field({ label, name, id, rows, disabled })
+  .form-group.form-custom.form-area&attributes(attributes)
+    if label
+      label.form-label(
+        for= id ? id : null
+      )= label
+    textarea.form-control(
+      name= name ? name : null
+      id= id ? id : null
+      rows= rows ? rows : null
+      disabled= (disabled === true) ? true : false
+    )

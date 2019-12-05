@@ -1,0 +1,42 @@
+extends modules/layout/_page-default
+
+block head
+  +head('Beagle')
+
+block main
+  .container-fluid.main-content
+    .login
+      .card.login__form
+        .card-header
+          img.login__img(src="images/beagle-logo.png", alt="Beagle Logo")
+          span.login__desc Please enter your user information.
+        .card-body
+          form(action="#" method="POST")
+            +group-input-field({
+              id: 'username',
+              type: 'text',
+              placeholder: 'Username'
+            })
+            +group-input-field({
+              id: 'password',
+              type: 'password',
+              placeholder: 'Password'
+            })
+            .form-group.form-custom.row.login__option
+              .col-6
+                +group-input-checkbox({
+                  name: 'remember-me',
+                  id: 'remember-me',
+                  label: 'Remember Me',
+                })
+              .col-6.login__forgot-password
+                a(href="#") Forgot Password?
+            .form-group.form-custom.login__submit
+              +buttons({
+                text: 'Sign me in',
+                type: 'primary',
+                size: 'xl'
+              })(type="submit" class="login__button")
+      .login__footer
+        span Don't have an account?
+        a(href="#") Sign Up

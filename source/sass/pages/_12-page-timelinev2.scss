@@ -1,0 +1,185 @@
+// ======================================================
+// Pages :: Timeline v2
+// ======================================================
+
+.timeline {
+  $this: &;
+
+  &--other {
+    max-width: none;
+    padding-bottom: 0;
+
+    &:before {
+      left: 50%;
+      top: 70px;
+      z-index: -1;
+    }
+
+    #{$this}__item {
+      margin: 30px 0 0;
+
+      &:before {
+        content: none;
+      }
+
+      &--detail #{$this}__header {
+        border-bottom: 1px solid $cl-lightgray-1;
+        padding-bottom: 15px;
+      }
+
+      &:last-child {
+        margin-bottom: 40px;
+        padding-left: 0;
+        text-align: center;
+      }
+
+      @include breakpoint-down(phone) {
+        margin-top: 60px;
+      }
+    }
+
+    #{$this}__header {
+      padding-top: 0;
+      line-height: 16px;
+    }
+
+    #{$this}__activity {
+      display: inline;
+      line-height: 16px;
+    }
+
+    #{$this}__time {
+      float: none;
+      display: block;
+      line-height: 21px;
+    }
+
+    #{$this}__detail {
+      margin-top: 20px;
+      overflow: visible;
+      white-space: normal;
+    }
+
+    #{$this}__blockquote {
+      margin-top: 20px;
+    }
+
+    #{$this}__load-more {
+      position: static;
+      left: auto;
+    }
+
+    @include breakpoint-down(phone) {
+      top: 70px;
+    }
+  }
+
+  &__month {
+    background: $cl-lightgray-1;
+    font-size: $font-size-large;
+    font-weight: 300;
+    list-style: none;
+    margin: 30px 0 15px;
+    padding: 11px 0 12px;
+    text-align: center;
+    width: 100%;
+
+    &:first-child {
+      margin-top: 0;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__item {
+    &--right {
+      right: 0;
+      padding-left: calc(50% + 45px);
+
+      @include breakpoint-down(phone) {
+        padding: 0;
+      }
+    }
+
+    &--left {
+      left: 0;
+      padding-right: calc(50% + 45px);
+      padding-left: 0;
+
+      #{$this}__content:before,
+      #{$this}__content:after {
+        left: auto;
+        right: -5px;
+      }
+
+      #{$this}__icon {
+        left: auto;
+        right: -67px;
+        /* stylelint-disable */
+        @include breakpoint-down(phone) {
+          left: 50%;
+          margin-left: -18px;
+          top: -48px;
+        }
+        /* stylelint-enable */
+      }
+
+      @include breakpoint-down(phone) {
+        padding: 0;
+      }
+    }
+  }
+
+  &__icon {
+    @include circle(44px);
+    position: absolute;
+    color: $cl-white;
+    top: 20px;
+    left: -67px;
+    font-size: 20px;
+    border: 2px solid $cl-white;
+    text-align: center;
+
+    i {
+      line-height: 40px;
+      vertical-align: middle;
+
+      @include breakpoint-down(phone) {
+        line-height: 34px;
+      }
+    }
+
+    @include breakpoint-down(phone) {
+      @include square(38px);
+      left: 50%;
+      margin-left: -18px;
+      top: -48px;
+      font-size: $font-size-large;
+    }
+  }
+
+  &__content {
+    &--file {
+      #{$this}__icon {
+        background: $cl-primary;
+      }
+    }
+
+    &--comment {
+      #{$this}__icon {
+        background: $cl-warning;
+      }
+    }
+
+    &--gallery {
+      #{$this}__icon {
+        background: $cl-success;
+      }
+    }
+
+    &--quote {
+      #{$this}__icon {
+        background: $cl-danger;
+      }
+    }
+  }
+}

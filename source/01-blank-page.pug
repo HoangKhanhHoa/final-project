@@ -1,0 +1,15 @@
+extends modules/layout/_page-default
+
+block head
+  +head('Beagle')
+
+block main
+  +header('Blank Page')
+  +rightSidebar()
+  +leftSidebar({
+    page: 'pages',
+    link: '01-blank-page.html'
+  })
+  .page-content
+    .page-body.container-fluid
+      h3.text-center Content goes here!

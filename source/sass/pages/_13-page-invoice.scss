@@ -1,0 +1,328 @@
+// ======================================================
+// Pages :: Invoice
+// ======================================================
+
+.invoice {
+  background-color: $cl-white;
+  padding: 100px 100px 70px;
+  color: $cl-gray-7;
+
+  &-title {
+    margin-bottom: 5px;
+    margin-top: 6px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    font-size: 28px;
+    color: $cl-darkgray-1;
+    line-height: 36px;
+  }
+
+  &__header {
+    margin-bottom: 100px;
+
+    @include breakpoint-down(tablet) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__logo {
+    height: 54px;
+    min-width: 204px;
+    background-image: url('#{$path-image}/logo-xx.png');
+    background-repeat: no-repeat;
+    background-position: 0;
+
+    @include breakpoint-down(tablet) {
+      height: 27px;
+      width: 102px;
+      background-image: url('#{$path-image}/logo.png');
+    }
+
+    @include breakpoint-down(smallphone) {
+      margin: 0 auto 20px;
+      min-width: auto;
+    }
+  }
+
+  &__id {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: right;
+    margin: 0;
+
+    @include breakpoint-down(tablet) {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    @include breakpoint-down(smallphone) {
+      text-align: center;
+    }
+  }
+
+  &__date {
+    font-size: $font-size-large;
+    text-align: right;
+    margin: 0;
+
+    @include breakpoint-down(tablet) {
+      font-size: 1rem;
+    }
+
+    @include breakpoint-down(smallphone) {
+      text-align: center;
+    }
+  }
+
+  &__person {
+    p {
+      font-size: $font-size-large;
+      line-height: 2rem;
+      margin: 0;
+
+      &:first-child {
+        font-weight: 500;
+      }
+
+      @include breakpoint-down(tablet) {
+        font-size: 1rem;
+        line-height: 20px;
+      }
+    }
+
+    &:last-child {
+      text-align: right;
+      @include breakpoint-down(smallphone) {
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    @include breakpoint-down(smallphone) {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &__payment-direction {
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+
+    i {
+      @include circle(80px);
+      background-color: $cl-whitesmoke-2;
+      font-size: 3.846rem;
+      color: $cl-silver-4;
+      line-height: 80px;
+
+      @include breakpoint-down(tablet) {
+        @include square(40px);
+        line-height: 40px;
+        font-size: 25px;
+      }
+
+      @include breakpoint-down(smallphone) {
+        transform: rotate(90deg);
+      }
+    }
+
+    @include breakpoint-down(smallphone) {
+      padding: 20px;
+      width: 100%;
+    }
+  }
+
+  &__data {
+    margin-bottom: 100px;
+
+    @include breakpoint-down(tablet) {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__details {
+    font-size: $font-size-medium;
+    width: 100%;
+
+    th {
+      text-align: right;
+      padding-bottom: 8px;
+      border-bottom: 1px solid $cl-whitesmoke-5;
+
+      &:first-child {
+        text-align: left;
+        width: 60%;
+      }
+    }
+
+    td {
+      @include breakpoint-down(tablet) {
+        padding: 15px 0;
+      }
+    }
+
+    @include breakpoint-down(tablet) {
+      font-size: 11px;
+    }
+  }
+
+  &__desc,
+  &__hours,
+  &__amount,
+  &__summary,
+  &__total,
+  &__amount-total {
+    padding: 20px 0;
+    border-bottom: 1px solid $cl-whitesmoke-5;
+    text-align: right;
+  }
+
+  &__desc {
+    text-align: left;
+  }
+
+  &__summary {
+    text-align: left;
+    color: $cl-silver-3;
+  }
+
+  &__total {
+    color: $cl-gray-7;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  &__amount-total {
+    font-size: 22px;
+    color: $cl-primary;
+
+    @include breakpoint-down(tablet) {
+      font-size: 11px;
+    }
+  }
+
+  &__payment-method {
+    margin-bottom: 75px;
+
+    p {
+      font-size: $font-size-large;
+      line-height: 2rem;
+      margin: 0;
+
+      &:first-child {
+        font-weight: 500;
+      }
+
+      @include breakpoint-down(tablet) {
+        font-size: 1rem;
+        line-height: 20px;
+      }
+    }
+
+    @include breakpoint-down(tablet) {
+      margin-bottom: 37px;
+    }
+  }
+
+  &__messages {
+    font-size: $font-size-medium;
+    margin-bottom: 62px;
+
+    p:first-child {
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    p:last-child {
+      line-height: 2rem;
+
+      @include breakpoint-down(tablet) {
+        line-height: 20px;
+      }
+    }
+
+    @include breakpoint-down(tablet) {
+      font-size: 1rem;
+    }
+
+    @include breakpoint-down(smallphone) {
+      margin-bottom: 31px;
+    }
+  }
+
+  &__company-infor {
+    margin-bottom: 70px;
+
+    & > :nth-child(n) {
+      border-left: 1px solid $cl-whitesmoke-5;
+      padding: 8px 40px;
+
+      @include breakpoint-down(phone) {
+        border: none;
+        padding: 8px 15px;
+      }
+    }
+
+    .logo {
+      border-left: none;
+
+      img {
+        vertical-align: middle;
+        border-style: none;
+      }
+    }
+
+    .summary {
+      padding: 0 40px 0;
+      line-height: 16px;
+
+      & :first-child {
+        color: $cl-gray-7;
+        font-size: $font-size-base;
+        line-height: 21px;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      & :last-child {
+        line-height: 16px;
+        margin-bottom: 15px;
+      }
+
+      @include breakpoint-down(phone) {
+        padding: 8px 15px;
+      }
+    }
+
+    .phone {
+      @include breakpoint-down(tablet) {
+        border-left-width: 0;
+      }
+    }
+
+    @include breakpoint-down(phone) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+
+    .button {
+      font-size: $font-size-base;
+      min-width: 96px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  @include breakpoint-down(tablet) {
+    padding: 50px 50px 35px;
+  }
+
+  @include breakpoint-down(phone) {
+    padding: 35px 25px 15px;
+  }
+}

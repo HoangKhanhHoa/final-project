@@ -1,0 +1,310 @@
+extends modules/layout/_page-default
+
+block head
+  +head('Beagle')
+
+block main
+  +header('Dashboard')
+  +rightSidebar()
+  +leftSidebar({page: 'home.html', link: 'home.html'})
+  .page-content
+    .page-body.container-fluid
+      .row
+        .col-12.col-lg-6.col-xl-3
+          .widget.widget-title
+            .chart-sparkline#sparkline-1
+              |0, 5, 3, 7, 5, 10, 3, 6, 5, 10
+            .data-infor
+              .data-infor__desc New Users
+              .data-infor__value
+                span.indicator.indicator--equal
+                  i.zmdi.zmdi-chevron-right
+                span.js-countUp(data-end="113")
+        .col-12.col-lg-6.col-xl-3
+          .widget.widget-title
+            .chart-sparkline#sparkline-2
+              |5, 8, 7, 10, 9, 10, 8, 6, 4, 6, 8, 7, 6, 8
+            .data-infor
+              .data-infor__desc Monthly Sales
+              .data-infor__value
+                span.indicator.indicator--positive
+                  i.zmdi.zmdi-chevron-up
+                span.js-countUp(data-end="80" data-suffix="%")
+        .col-12.col-lg-6.col-xl-3
+          .widget.widget-title
+            .chart-sparkline#sparkline-3
+              |2, 3, 4, 5, 4, 3, 2, 3, 4, 5, 6, 5, 4, 3, 4, 5, 6, 5, 4, 4, 5
+            .data-infor
+              .data-infor__desc Impressions
+              .data-infor__value
+                span.indicator.indicator--positive
+                  i.zmdi.zmdi-chevron-up
+                span#idid.js-countUp(data-end="532")
+        .col-12.col-lg-6.col-xl-3
+          .widget.widget-title
+            .chart-sparkline#sparkline-4
+              |2, 5, 3, 7, 5, 10, 3, 6, 5, 7
+            .data-infor
+              .data-infor__desc Downloads
+              .data-infor__value
+                span.indicator.indicator--negative
+                  i.zmdi.zmdi-chevron-down
+                span.js-countUp(data-end="113")
+      .row
+        .col-md-12
+          .widget.widget--full.loading-available
+            .widget__head
+              .widget__tools
+                .dropdown
+                  a(data-toggle="dropdown")
+                    i.zmdi.zmdi-more-vert.d-inline-block.d-md-none
+                  .dropdown-menu
+                    a.dropdown-item(href="#") Week
+                    a.dropdown-item(href="#") Month
+                    a.dropdown-item(href="#") Year
+                    .dropdown-divider
+                    a.dropdown-item(href="#") Today
+                i.icon.zmdi.zmdi-chevron-down
+                i.icon.zmdi.zmdi-refresh-sync.js-loading-state
+                i.icon.zmdi.zmdi-close
+              .button-toolbar.d-none.d-md-block
+                .button-group
+                  +buttons({
+                    text: 'Week',
+                    type: 'secondary'
+                  })
+                  +buttons({
+                    text: 'Month',
+                    type: 'secondary'
+                  })(class="active")
+                  +buttons({
+                    text: 'Year',
+                    type: 'secondary'
+                  })
+                .button-group
+                  +buttons({
+                    text: 'Today',
+                    type: 'secondary'
+                  })
+              .widget__title Recent Movement
+            .widget__body
+              .widget__chart-infor
+                ul
+                  li
+                    span.chart-color.chart-color--one
+                    | Purchases
+                  li
+                    span.chart-color.chart-color--two
+                    | Plans
+                  li
+                    span.chart-color.chart-color--three
+                    | Services
+              .widget__chart-counter
+                .counter
+                  .counter__value 25%
+                  .counter__desc Purchase
+                .counter
+                  .counter__value 5%
+                  .counter__desc Plans
+                .counter
+                  .counter__value 5%
+                  .counter__desc Services
+              .widget__chart-main#main-chart(style="height: 260px;")
+            .spinner-load
+              <svg width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="circle" fill="none" stroke-width="4" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+              </svg>
+      .row
+        .col-12.col-lg-6
+          .card.card--table-content
+            .card-header
+              .card__tools.dropdown
+                i.zmdi.zmdi-download
+                a(href="#" data-toggle="dropdown" aria-expanede="false")
+                  i.zmdi.zmdi-more-vert
+                .dropdown-menu
+                  a.dropdown-item(href="#") Action
+                  a.dropdown-item(href="#") Another action
+                  a.dropdown-item(href="#") Somthing else here
+                  .dropdown-divider
+                  a.dropdown-item(href="#") Separated link
+              .title Purchases
+            .card-body.table-responsive
+              table.table.table-striped.table-borderless
+                thead
+                  tr
+                    th(style="width:40%") Product
+                    th.price Price
+                    th.date(style="width:20%") Date
+                    th.state(style="width:20%") State
+                    th.actions(style="width:5%")
+                tbody
+                  tr
+                    td Sony Xperia M4
+                    td.price $149
+                    td.date Aug 23, 2018
+                    td.state--success Completed
+                    td.actions
+                      a.icon(href="#")
+                        i.zmdi.zmdi-plus-circle-o
+                  tr
+                    td Apple iPhone 6
+                    td.price $535
+                    td.date Aug 20, 2018
+                    td.state--success Completed
+                    td.actions
+                      a.icon(href="#")
+                        i.zmdi.zmdi-plus-circle-o
+                  tr
+                    td Samsung Galaxy S7
+                    td.price $583
+                    td.date Aug 18, 2018
+                    td.state--warning Pending
+                    td.actions
+                      a.icon(href="#")
+                        i.zmdi.zmdi-plus-circle-o
+                  tr
+                    td HTC One M9
+                    td.price $350
+                    td.date Aug 15, 2018
+                    td.state--warning Pending
+                    td.actions
+                      a.icon(href="#")
+                          i.zmdi.zmdi-plus-circle-o
+                  tr
+                    td Sony Xperia Z5
+                    td.price $495
+                    td.date Aug 13, 2018
+                    td.state--danger Cancelled
+                    td.actions
+                      a.icon(href="#")
+                          i.zmdi.zmdi-plus-circle-o
+        .col-12.col-lg-6
+          .card.card--table-content
+            .card-header
+              .card__tools.dropdown
+                i.icon.zmdi.zmdi-download
+                a(href="#" data-toggle="dropdown")
+                  i.icon.zmdi.zmdi-more-vert
+                .dropdown-menu.dropdown-menu-right
+                  a.dropdown-item(href="#") Action
+                  a.dropdown-item(href="#") Another action
+                  a.dropdown-item(href="#") Something else here
+                  .dropdown-divider
+                  a.dropdown-item(href="#") Separated link
+              .title Latest Commits
+            .card-body.table-responsive
+              table.table.table-striped.table-borderless
+                thead
+                  tr
+                    th(style="width:37%") User
+                    th(style="width:36%") Commit
+                    th Date
+                    th.actions
+                tbody
+                  -
+                    var latestCommit = [
+                      {name: 'Penelope Thornton', action: 'Initial commit', date: 'Aug 16, 2018', img: 'user-avatar-6.png'},
+                      {name: 'Benji Harper', action: 'Main structure markup', date: 'Jul 28, 2015', img: 'user-avatar-4.png'},
+                      {name: 'Justine Myranda', action: 'Left sidebar adjusments', date: 'Jul 15, 2015', img: 'user-avatar-5.png'},
+                      {name: 'Sherwood Clifford', action: 'Topbar dropdown style', date: 'Jun 30, 2015', img: 'user-avatar-3.png'},
+                    ];
+                  each val in latestCommit
+                    tr
+                      td.user-avatar
+                        img.d-none.d-lg-inline(src="images/" + val.img, alt="")
+                        | #{val.name}
+                      td= val.action
+                      td= val.date
+                      td.actions
+                        a.icon(href="#")
+                          i.zmdi.zmdi-github-alt
+      .row
+        .col-12.col-lg-4
+          .card
+            .card-header.card-header--border
+              | Current Progress
+            .card-body.card--progress
+              -
+                var userProgress = [
+                  {title: 'Bootstrap Admin', progress: '40%'},
+                  {title: 'Custom Work', progress: '65%'},
+                  {title: 'Clients Module', progress: '30%'},
+                  {title: 'Email Templates', progress: '80%'},
+                  {title: 'Plans Module', progress: '45%'},
+                ];
+              each val in userProgress
+                .row.user-progress.user-progress--small
+                  .col-lg-5
+                    .user-progress__title= val.title
+                  .col-lg-7
+                    .progress
+                      .progress-bar.progress-bar--success(style= `width: ${val.progress}`)
+        .col-12.col-lg-4
+          .widget.loading-available
+            .widget__head
+              .widget__tools
+                i.icon.zmdi.zmdi-chevron-down
+                i.icon.zmdi.zmdi-refresh-sync.js-loading-state
+                i.icon.zmdi.zmdi-close
+              .widget__title Top Sales
+            .widget__body
+              #top-sales(style="height: 178px;")
+              .chart-pie-counter 36
+            .chart-data
+              .chart-data__row.chart-data__one
+                span.chart-data__name Premium Purchases
+                span.chart-data__value 125
+              .chart-data__row.chart-data__two
+                span.chart-data__name Standard Plans
+                span.chart-data__value 1569
+              .chart-data__row.chart-data__three
+                span.chart-data__name Services
+                span.chart-data__value 824
+            .spinner-load
+              <svg width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="circle" fill="none" stroke-width="4" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+              </svg>
+        .col-12.col-lg-4
+          .widget
+            #home-calendar
+      .row
+        .col-12.col-lg-6
+          .card
+            .card-header Latest Activity
+            .card-body
+              ul.user-timeline.user-timeline--dashboard
+                -
+                  var timeline = [
+                    {date: 'Just Now', title: 'Create New Page', desc: 'Vestibulum lectus nulla, maximus in eros non, tristique.'},
+                    {date: 'Today - 15:35', title: 'Back Up Theme', desc: 'Vestibulum lectus nulla, maximus in eros non, tristique.'},
+                    {date: 'Yesterday - 10:41', title: 'Changes In The Structure', desc: 'Vestibulum lectus nulla, maximus in eros non, tristique.'},
+                    {date: 'Yesterday - 10:41', title: 'Changes In The Structure', desc: 'Vestibulum lectus nulla, maximus in eros non, tristique.'},
+                  ];
+                each val in timeline
+                  li.user-timeline__item.user-timeline__latest
+                    .user-timeline__date= val.date
+                    .user-timeline__title= val.title
+                    .user-timeline__desc= val.desc
+        .col-12.col-lg-6
+          .widget.loading-available
+            .widget__head
+              .widget__tools
+                i.icon.zmdi.zmdi-chevron-down
+                i.icon.zmdi.zmdi-refresh-sync.js-loading-state
+                i.icon.zmdi.zmdi-close
+              .widget__title Conversions
+            .widget__body
+              .widget__map-infor.mb-4
+                .world-status
+                  span.indicator.indicator--positive
+                    i.zmdi.zmdi-chevron-up
+                  span 15%
+                .counter
+                  .counter__value 156k
+                  .counter__desc IMPRESSIONS
+              #map-widget(style="height: 265px")
+            .spinner-load
+              <svg width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="circle" fill="none" stroke-width="4" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+              </svg>

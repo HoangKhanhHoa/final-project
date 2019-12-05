@@ -1,0 +1,68 @@
+extends modules/layout/_page-default
+
+block head
+  +head('Beagle')
+
+block main
+  .container-fluid.main-content
+    .sign-up
+      .card.sign-up__card
+        .card-header
+          img.login__img(src="images/beagle-logo.png", alt="Beagle Logo")
+          span.login__desc Please enter your user information.
+        .card-body
+          form(action="#" method="POST")
+            .sign-up__title Sign Up
+            +group-input-field({
+              id: 'username',
+              type: 'text',
+              placeholder: 'Username'
+            })
+            +group-input-field({
+              id: 'email',
+              type: 'email',
+              placeholder: 'E-mail'
+            })
+            .row.sign-up__password
+              .col-6
+                +group-input-field({
+                  id: 'password',
+                  type: 'password',
+                  placeholder: 'Password'
+                })
+              .col-6
+                +group-input-field({
+                  id: 're-password',
+                  type: 'password',
+                  placeholder: 'Confirm'
+                })
+            .form-group.form-custom.sign-up__submit
+              +buttons({
+                text: 'Sign Up',
+                type: 'primary',
+                size: 'xl'
+              })(type="submit")
+            .sign-up__option Or
+            .row.sign-up__social
+              .col-6
+                +buttons({
+                  text: 'Facebook',
+                  type: 'primary',
+                  size: 'lg',
+                  iconFont: 'facebook'
+                })(class="facebook")
+              .col-6
+                +buttons({
+                  text: 'Google Plus',
+                  type: 'primary',
+                  size: 'lg',
+                  iconFont: 'google-plus'
+                })(class="google-plus")
+            .form-group.form-custom.sign-up__agreement
+              +group-input-checkbox({
+                name: 'checkbox-agree',
+                id: 'checkbox-agree',
+                label: 'By creating an account, you agree the',
+              })
+              a(href="#") terms and conditions
+      .sign-up__footer &copy; 2018 Your Company

@@ -1,0 +1,179 @@
+//-------------------------------------------------------
+//- Styleguides :: Radio Button
+//-------------------------------------------------------
+
+h2 Radio-Button
+-
+  var radioButton = [
+    {name: 'radioButton', id: 'radio-1', label: 'Option 1', value: 'option-1', checked: true},
+    {name: 'radioButton', id: 'radio-2', label: 'Option 2', value: 'option-2'},
+    {name: 'radioButton', id: 'radio-3', label: 'Option 3', value: 'option-3'},
+  ];
+
+  var radioButtonInline = [
+    {name: 'radioButton-1', id: 'radio-4', label: 'Option 1', value: 'option-1', checked: true, isInline: true},
+    {name: 'radioButton-1', id: 'radio-5', label: 'Option 2', value: 'option-2', isInline: true},
+    {name: 'radioButton-1', id: 'radio-6', label: 'Option 3', value: 'option-3', isInline: true},
+  ];
+
+  var radioButtonColor = [
+    {name: 'radioButton-2', id: 'radio-7', label: 'Option 1', value: 'option-1', checked: true, isColor: true},
+    {name: 'radioButton-2', id: 'radio-8', label: 'Option 2', value: 'option-2', isColor: true},
+    {name: 'radioButton-2', id: 'radio-9', label: 'Option 3', value: 'option-3', isColor: true},
+  ];
+
+  var radioIcon = [
+    {name: 'radioIcon', id: 'icon-1', value: 'icon-1', icon: 'female', checked: true},
+    {name: 'radioIcon', id: 'icon-2', value: 'icon-2', icon: 'male-alt'}
+  ]
+.row
+  .col-6
+    .code-example
+      .demo
+        h4 Radio-Button Normal
+        form.form-custom
+          each val in radioButton
+            +group-input-radio({
+              name: val.name,
+              id: val.id,
+              label: val.label,
+              checked: val.checked
+            })
+      pre
+        each val in radioButton
+          code
+            | +group-input-radio({
+            |   name: '#{val.name}',
+            |   id: '#{val.id}',
+            |   label: '#{val.label}',
+            | })
+            |
+  .col-6
+    .code-example
+      .demo
+        h4 Radio-Button Inline
+        form.form-custom
+          each val in radioButtonInline
+            +group-input-radio({
+              name: val.name,
+              id: val.id,
+              label: val.label,
+              checked: val.checked,
+            })(class="input-radio-custom--inline")
+      pre
+        each val in radioButtonInline
+          code
+            | +group-input-radio({
+            |   name: '#{val.name}',
+            |   id: '#{val.id}',
+            |   label: '#{val.label}',
+            | })(class="input-radio-custom--inline")
+            |
+  .col-6
+    .code-example
+      .demo
+        h4 Radio-Button Full Color
+        form.form-custom
+          each val in radioButtonColor
+            +group-input-radio({
+              name: val.name,
+              id: val.id,
+              label: val.label,
+              checked: val.checked,
+              isColor: val.isColor
+            })
+      pre
+        each val in radioButtonColor
+          code
+            | +group-input-radio({
+            |   name: '#{val.name}',
+            |   id: '#{val.id}',
+            |   label: '#{val.label}',
+            |   isColor: true,
+            | })
+            |
+  .col-6
+    .code-example
+      .demo
+        h4 Radio-Button Icon
+        form.form-custom
+          each val in radioIcon
+            +group-input-radio-icon({
+              name: val.name,
+              id: val.id,
+              icon: val.icon,
+              checked: val.checked,
+            })
+      pre
+        each val in radioIcon
+          code
+            | +group-input-radio-icon({
+            |   name: '#{val.name}',
+            |   id: '#{val.id}',
+            |   icon: '#{val.icon}',
+            | })
+            |
+  .col-6
+    .code-example
+      .demo
+        h4 Radio-Button Validation
+        form.form-custom
+          +group-input-radio-valid({
+            name: 'radioButton-3',
+            id: 'radio-10',
+            label: 'Option 1',
+            checked: true,
+          })
+          +group-input-radio-invalid({
+            name: 'radioButton-3',
+            id: 'radio-11',
+            label: 'Option 2',
+          })
+      pre
+        code
+          | +group-input-radio-valid({
+          |   name: 'radioButton-3',
+          |   id: 'radio-10',
+          |   label: 'Option 1',
+          |   checked: true,
+          | })
+          | +group-input-radio-invalid({
+          |    name: 'radioButton-3',
+          |   id: 'radio-11',
+          |   label: 'Option 2',
+          | })
+          |
+  .col-6
+    .code-example
+      .demo
+        h4 Radio-Button Validation Full Color
+        form.form-custom
+          +group-input-radio-valid({
+            name: 'radioButton-4',
+            id: 'radio-12',
+            label: 'Option 1',
+            checked: true,
+            isColor: true
+          })
+          +group-input-radio-invalid({
+            name: 'radioButton-4',
+            id: 'radio-13',
+            label: 'Option 2',
+            isColor: true
+          })
+      pre
+        code
+          | +group-input-radio-valid({
+          |   name: 'radioButton-3',
+          |   id: 'radio-10',
+          |   label: 'Option 1',
+          |   checked: true,
+          |   isColor: true
+          | })
+          | +group-input-radio-invalid({
+          |    name: 'radioButton-3',
+          |   id: 'radio-11',
+          |   label: 'Option 2',
+          |   isColor: true
+          | })
+          |

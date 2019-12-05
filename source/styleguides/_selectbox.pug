@@ -1,0 +1,201 @@
+//-------------------------------------------------------
+//- Styleguides :: Selectbox
+//-------------------------------------------------------
+
+h2 Selecbox
+
+.row
+  .col-6
+    .code-example
+      .demo
+        form
+          -
+            var options = [
+              { value: '1', display: 'One' },
+              { value: '2', display: 'Two' },
+              { value: '3', display: 'Three' },
+              { value: '4', display: 'Four' }
+            ];
+          +group-selectbox({
+            id: 'number',
+            label: 'Basic Select',
+            options
+          })
+      pre
+        code
+          | form
+          |   -
+          |     var options = [
+          |       { value: '1', display: 'One' },
+          |       { value: '2', display: 'Two' },
+          |       { value: '3', display: 'Three' },
+          |       { value: '4', display: 'Four' }
+          |     ];
+          |   +group-selectbox({
+          |     id: 'number',
+          |     label: 'Basic Select',
+          |     options
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          -
+            var options = [
+              { value: '1', display: 'One' },
+              { value: '2', display: 'Two' },
+              { value: '3', display: 'Three' },
+              { value: '4', display: 'Four' }
+            ];
+          +group-selectbox({
+            id: 'number-2',
+            label: 'Basic Select Multiple',
+            options,
+            isMultiple: true
+          })
+      pre
+        code
+          | form
+          |   -
+          |     var options = [
+          |       { value: '1', display: 'One' },
+          |       { value: '2', display: 'Two' },
+          |       { value: '3', display: 'Three' },
+          |       { value: '4', display: 'Four' }
+          |     ];
+          |   +group-selectbox({
+          |     id: 'number-2',
+          |     label: 'Basic Select Multiple',
+          |     options,
+          |     isMultiple: true
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          -
+            var options = [
+              { value: '1', display: 'One' },
+              { value: '2', display: 'Two', disabled: true },
+              { value: '3', display: 'Three' },
+              { value: '4', display: 'Four' }
+            ];
+          +group-selectbox({
+            id: 'number-3',
+            label: 'Select With Disabled Option',
+            options
+          })
+      pre
+        code
+          | form
+          |   -
+          |     var options = [
+          |       { value: '1', display: 'One' },
+          |       { value: '2', display: 'Two', disabled: true },
+          |       { value: '3', display: 'Three' },
+          |       { value: '4', display: 'Four' }
+          |     ];
+          |   +group-selectbox({
+          |     id: 'number-3',
+          |     label: 'Select With Disabled Option',
+          |     options
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          -
+            var options = [
+              { value: '1', display: 'One' },
+              { value: '2', display: 'Two', selected: true },
+              { value: '3', display: 'Three' },
+              { value: '4', display: 'Four' }
+            ];
+          +group-selectbox({
+            id: 'number-4',
+            label: 'Select With Selected Option',
+            options
+          })
+      pre
+        code
+          | form
+          |   -
+          |     var options = [
+          |       { value: '1', display: 'One' },
+          |       { value: '2', display: 'Two', selected: true },
+          |       { value: '3', display: 'Three' },
+          |       { value: '4', display: 'Four' }
+          |     ];
+          |   +group-selectbox({
+          |     id: 'number-4',
+          |     label: 'Select With Selected Option',
+          |     options
+          |   })
+
+h2 Select2
+
+.row
+  .col-6
+    .code-example
+      .demo
+        form
+          -
+            var options = [
+              { value: '1', display: 'One' },
+              { value: '2', display: 'Two', selected: true },
+              { value: '3', display: 'Three' },
+              { value: '4', display: 'Four' }
+            ];
+          +group-selectbox-select2({
+            id: 'number-5',
+            label: 'Select With Selected Option',
+            options
+          })
+      pre
+        code
+          | form
+          |   -
+          |     var options = [
+          |       { value: '1', display: 'One' },
+          |       { value: '2', display: 'Two', selected: true },
+          |       { value: '3', display: 'Three' },
+          |       { value: '4', display: 'Four' }
+          |     ];
+          |   +group-selectbox-select2({
+          |     id: 'number-4',
+          |     label: 'Select With Selected Option',
+          |     options
+          |   })
+  .col-6
+    .code-example
+      .demo
+        form
+          -
+            var options = [
+              { value: '1', display: 'One' },
+              { value: '2', display: 'Two', selected: true },
+              { value: '3', display: 'Three' },
+              { value: '4', display: 'Four' }
+            ];
+          +group-selectbox-select2({
+            id: 'number-6',
+            label: 'Select Multiple With Selected Option',
+            options,
+            isMultiple: true
+          })
+      pre
+        code
+          | form
+          |   -
+          |     var options = [
+          |       { value: '1', display: 'One' },
+          |       { value: '2', display: 'Two', selected: true },
+          |       { value: '3', display: 'Three' },
+          |       { value: '4', display: 'Four' }
+          |     ];
+          |   +group-selectbox-select2({
+          |     id: 'number-4',
+          |     label: 'Select Multiple With Selected Option',
+          |     options,
+          |     isMultiple: true
+          |   })

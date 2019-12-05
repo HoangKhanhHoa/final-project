@@ -1,0 +1,110 @@
+//-------------------------------------------------------
+//- Styleguides :: Fileupload
+//-------------------------------------------------------
+
+h2 File Upload
+
+.row
+  .col-6
+    .code-example
+      .demo
+        +button-file-upload({
+          name: 'file-1',
+          id: 'file-1',
+          label: 'Browse files...',
+          isMultiple: true,
+        })
+      pre
+        code
+          | +button-file-upload({
+          |   name: 'file-1',
+          |   id: 'file-1',
+          |   label: 'Browse files...',
+          |})
+
+  .col-6
+    .code-example
+      .demo
+        +button-file-upload({
+          name: 'file-2',
+          id: 'file-2',
+          label: 'Browse files...',
+          typeColor: 'primary',
+          isMultiple: true,
+        })
+      pre
+        code
+          | +button-file-upload({
+          |   name: 'file-2',
+          |   id: 'file-2',
+          |   label: 'Browse files...',
+          |   typeColor: 'primary'
+          |})
+
+  .col-6
+    .code-example
+      .demo
+        +file-upload-custom-before({
+          name: 'file-3',
+          id: 'file-3',
+          label: 'Choose file',
+        })
+      pre
+        code
+          | +file-upload-custom-before({
+          |   name: 'file-3',
+          |   id: 'file-3',
+          |   label: 'Choose file',
+          |})
+
+  .col-6
+    .code-example
+      .demo
+        +file-upload-custom-before({
+          name: 'file-4',
+          id: 'file-4',
+          label: 'Choose file',
+          isButton: true
+        })
+      pre
+        code
+          | +file-upload-custom-before({
+          |   name: 'file-4',
+          |   id: 'file-4',
+          |   label: 'Choose file',
+          |   isButton: true
+          |})
+
+  .col-6
+    .code-example
+      .demo
+        +file-upload-custom-after({
+          name: 'file-5',
+          id: 'file-5',
+          label: 'Choose file',
+        })
+      pre
+        code
+          | +file-upload-custom-after({
+          |   name: 'file-5',
+          |   id: 'file-5',
+          |   label: 'Choose file',
+          |})
+
+  .col-6
+    .code-example
+      .demo
+        +file-upload-custom-after({
+          name: 'file-6',
+          id: 'file-6',
+          label: 'Choose file',
+          isButton: true
+        })
+      pre
+        code
+          | +file-upload-custom-after({
+          |   name: 'file-6',
+          |   id: 'file-6',
+          |   label: 'Choose file',
+          |   isButton: true
+          |})

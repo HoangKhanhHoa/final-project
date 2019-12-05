@@ -1,0 +1,176 @@
+// ======================================================
+// Components :: Buttons
+// ======================================================
+
+.button {
+  box-shadow: 0 1px 0 rgba($cl-black, .05);
+  font-weight: $font-weight-bold;
+  font-size: 1rem;
+  line-height: 28px;
+  border-radius: $border-radius-small;
+  padding: 0 10px;
+  transition: all .25s ease;
+  text-align: center;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  // Modifier: Type
+
+  &--primary {
+    background-color: $cl-primary;
+    color: $cl-white;
+
+    &:hover {
+      background-color: $bg-primary-hover;
+      border-color: $bg-primary-hover;
+      border-bottom-color: $bd-primary-hover;
+      box-shadow: inset 0 -1px 0 $bd-primary-hover;
+      color: $cl-white;
+    }
+
+    &:active {
+      background-color: $bg-primary-active;
+      border-color: $bg-primary-active;
+      border-top-color: $bd-primary-active;
+      box-shadow: inset 0 2px 0 $bd-primary-hover;
+      color: $cl-white;
+    }
+  }
+
+  &--secondary {
+    background-color: $cl-white;
+    border-color: $bd-secondary;
+    color: $cl-secondary;
+
+    &:hover {
+      border-color: $bd-secondary-hover;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    }
+
+    &:active {
+      background-color: $bg-secondary-active;
+      box-shadow: inset 0 2px 0 rgba(0, 0, 0, .06);
+    }
+  }
+
+  &--warning {
+    background-color: $cl-warning;
+    color: $cl-white;
+
+    &:hover {
+      background-color: $bg-warning-hover;
+      border-color: $bg-warning-hover;
+      border-bottom-color: $bd-warning-hover;
+      box-shadow: inset 0 -1px 0 $bd-warning-hover;
+      color: $cl-white;
+    }
+
+    &:active {
+      background-color: $bg-warning-active;
+      border-color: $bg-warning-active;
+      border-top-color: $bd-warning-active;
+      box-shadow: inset 0 2px 0 $bd-warning-hover;
+      color: $cl-white;
+    }
+  }
+
+  &--danger {
+    background-color: $cl-danger;
+    color: $cl-white;
+
+    &:hover {
+      background-color: $bg-danger-hover;
+      border-color: $bg-danger-hover;
+      border-bottom-color: $bd-danger-hover;
+      box-shadow: inset 0 -1px 0 $bd-danger-hover;
+      color: $cl-white;
+    }
+
+    &:active {
+      background-color: $bg-danger-active;
+      border-color: $bg-danger-active;
+      border-top-color: $bd-danger-active;
+      box-shadow: inset 0 2px 0 $bd-danger-hover;
+      color: $cl-white;
+    }
+  }
+
+  &--success {
+    background-color: $cl-success;
+    color: $cl-white;
+
+    &:hover {
+      background-color: $bg-success-hover;
+      border-color: $bg-success-hover;
+      border-bottom-color: $bd-success-hover;
+      box-shadow: inset 0 -1px 0 $bd-success-hover;
+      color: $cl-white;
+    }
+
+    &:active {
+      background-color: $bg-success-active;
+      border-color: $bg-success-active;
+      border-top-color: $bd-success-active;
+      box-shadow: inset 0 2px 0 $bd-success-hover;
+      color: $cl-white;
+    }
+  }
+
+  // Modifier: Size
+
+  &--xs {
+    padding: 0 6px;
+    height: 20px;
+    line-height: 18px;
+    font-size: $font-size-small - 1;
+  }
+
+  &--sm {
+    padding: 0 8px;
+    height: 24px;
+    line-height: 22px;
+    font-size: $font-size-base - 1;
+  }
+
+  &--lg {
+    padding: 0 12px;
+    height: 40px;
+    line-height: 38px;
+    font-size: $font-size-medium - 1;
+  }
+
+  &--xl {
+    padding: 0 16px;
+    height: 45px;
+    line-height: 43px;
+    font-size: $font-size-medium - 1;
+  }
+
+  // Modifier: Rounded
+
+  &--rounded {
+    border-radius: 15px;
+
+    &.button--lg {
+      border-radius: 20px;
+    }
+
+    &.button--xl {
+      border-radius: 25px;
+    }
+  }
+
+  // Icon Style
+
+  .icon {
+    font-size: $font-size-medium;
+    line-height: 15px;
+    vertical-align: middle;
+
+    &.icon-left {
+      margin-right: 4px;
+    }
+  }
+}

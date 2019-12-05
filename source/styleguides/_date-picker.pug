@@ -1,0 +1,87 @@
+//-------------------------------------------------------
+//- Styleguides :: Date Picker
+//-------------------------------------------------------
+
+h2 Date Picker
+
+.row
+  .col-4
+    .code-example
+      .demo
+        form.form-custom
+          +date-picker({
+            id: 'datepicker',
+            label: 'Basic Date Time Picker',
+            placeholder: 'DD/MM/YYYY - HH:MM'
+          })
+      pre
+        code
+          | form.form-custom
+          |   +date-picker({
+          |     id: 'date-picker1',
+          |     label: 'Basic Date Time Picker',
+          |     placeholder: 'DD/MM/YYYY - HH:MM'
+          |   })
+  .col-4
+    .code-example
+      .demo
+        form.form-custom
+          +date-picker-icon({
+            id: 'datepicker-icon-readonly',
+            label: 'Date Time Picker Readonly',
+            readonly: true,
+          })
+      pre
+        code
+          | form.form-custom
+          |   +date-picker-icon({
+          |     id: 'date-picker2',
+          |     label: 'Date Time Picker Readonly',
+          |     readonly: true,
+          |   })
+  .col-4
+    .code-example
+      .demo
+        form.form-custom
+          +date-picker-min-view({
+            id: 'onlydatepicker',
+            label: 'Only Date Picker',
+            dateFormat: 'dd MM yyyy',
+            minView: '2'
+          })
+      pre
+        code
+          | form.form-custom
+          |   +date-picker-min-view({
+          |     id: 'date-picker2',
+          |     label: 'Date Time Picker Readonly',
+          |     dateFormat: 'dd MM yyyy',
+          |     minView: '2'
+          |   })
+-
+  var views = [
+    {id: 'datetimeview-1', label: 'Decade View', startView: '4'},
+    {id: 'datetimeview-2', label: 'Year View', startView: '3'},
+    {id: 'datetimeview-3', label: 'Month View', startView: '2'},
+    {id: 'datetimeview-4', label: 'Day View', startView: '1'},
+    {id: 'datetimeview-5', label: 'Hour View', startView: '0'}
+  ];
+.row
+  each val in views
+    .col-4
+      .code-example
+        .demo
+          form.form-custom
+            +date-picker-start-view({
+              id: val.id,
+              label: val.label,
+              startView: val.startView,
+            })
+        pre
+          code
+            | form.form-custom
+            |   +date-picker-start-view({
+            |     id: '#{val.id}',
+            |     label: '#{val.label}',
+            |     startView: '#{val.startView}',
+            |   })

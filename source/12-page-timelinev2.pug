@@ -1,0 +1,121 @@
+extends modules/layout/_page-default
+
+block head
+  +head('Beagle')
+
+block main
+  +header('Timeline 2')
+  +rightSidebar()
+  +leftSidebar({
+    page: 'pages',
+    link: '12-page-timelinev2.html'
+  })
+  .page-content
+    .page-head
+      h2.timeline-title Timeline 2
+      nav(aria-label="breadcrumb" )
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href="#") Home
+          li.breadcrumb-item
+            a(href="#") Pages
+          li.breadcrumb-item
+            a(href="#") Timeline 2
+    .page-body.container-fluid
+      .row
+        .col-12
+          ul.timeline.timeline--other
+            li.timeline__month
+              span September, 2018
+            li.timeline__item.timeline__item--right
+              .timeline__content.timeline__content--file
+                .timeline__icon
+                  i.zmdi.zmdi-file
+                .timeline__avatar
+                  img(src="images/user-avatar-6.png", alt="")
+                .timeline__header
+                  span.timeline__author Penelope Thornton
+                  p.timeline__activity
+                    | Pellentesque imperdiet
+                    a(href="#") Amet nisl sed mattis
+                    |.
+                  span.timeline__time September 16, 2018 - 4:34 PM
+            li.timeline__item.timeline__item--detail.timeline__item--left
+              .timeline__content.timeline__content--comment
+                .timeline__icon
+                  i.zmdi.zmdi-comment-text-alt
+                .timeline__avatar
+                  img(src="images/user-avatar-1.png", alt="")
+                .timeline__header
+                  span.timeline__author Kristopher Donny
+                  p.timeline__activity
+                    | Mauris condimentum est
+                    a(href="#") Viverra erat fermentum
+                    |.
+                  span.timeline__time September 13, 2018 - 9:54 AM
+                .timeline__detail Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sit amet tellus vel leo posuere fames commodo in eget ante. Vivamus vehicula sed velit at pulvinar.
+            li.timeline__month
+              span August, 2018
+            li.timeline__item.timeline__item--detail.timeline__item--right
+              .timeline__content.timeline__content--gallery
+                .timeline__icon
+                  i.zmdi.zmdi-image
+                .timeline__avatar
+                  img(src="images/user-avatar-3.png", alt="")
+                .timeline__header
+                  span.timeline__author Penelope Thornton
+                  p.timeline__activity
+                    | pellentesque tortor
+                    a(href="#") enim
+                    | .
+                  span.timeline__time August 23, 2018 - 10:42 AM
+                .timeline__gallery
+                  img.gallery-thumbnail(src="images/thumbnail-1.jpg", alt="Thumbnail")
+                  img.gallery-thumbnail(src="images/thumbnail-2.jpg", alt="Thumbnail")
+                  img.gallery-thumbnail(src="images/thumbnail-3.jpg", alt="Thumbnail")
+                  img.gallery-thumbnail(src="images/thumbnail-4.jpg", alt="Thumbnail")
+            li.timeline__item.timeline__item--detail.timeline__item--left
+              .timeline__content.timeline__content--comment
+                .timeline__icon
+                  i.zmdi.zmdi-comment-text-alt
+                .timeline__avatar
+                  img(src="images/user-avatar-4.png", alt="")
+                .timeline__header
+                  span.timeline__author Benji Harper
+                  p.timeline__activity
+                    | Mauris condimentum est
+                    a(href="#") Vestibulum justo neque
+                    |.
+                  span.timeline__time August 19, 2018 - 7:15 PM
+                .timeline__detail Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sit amet tellus vel leo posuere fames commodo in eget ante. Vivamus vehicula sed velit at pulvinar.
+            li.timeline__item.timeline__item--right
+              .timeline__content.timeline__content--file
+                .timeline__icon
+                  i.zmdi.zmdi-file
+                .timeline__avatar
+                  img(src="images/user-avatar-5.png", alt="")
+                .timeline__header
+                  span.timeline__author Justine Myranda
+                  p.timeline__activity
+                    | Pellentesque imperdiet
+                    a(href="#") Amet nisl sed mattis
+                    |.
+                  span.timeline__time August 6, 2018 - 12:02 PM
+            li.timeline__item.timeline__item--detail.timeline__item--left
+              .timeline__content.timeline__content--quote
+                .timeline__icon
+                  i.zmdi.zmdi-quote
+                .timeline__avatar
+                  img(src="images/user-avatar-3.png", alt="")
+                .timeline__header
+                  span.timeline__author Sherwood Clifford
+                  p.timeline__activity
+                    | pellentesque tortor
+                    a(href="#") Aliquam viverra
+                    |.
+                  span.timeline__time August 1, 2018 - 6:25 AM
+                blockquote.timeline__blockquote
+                  p Quisque condimentum enim nec porttitor egestas.
+                  .blockquote-footer Aliquam viverra ornare dolor.
+            li.timeline__item
+              a.timeline__load-more(href="#") Load more

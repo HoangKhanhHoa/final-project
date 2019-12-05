@@ -1,0 +1,80 @@
+// ======================================================
+// Pages :: Login
+// ======================================================
+
+.main-content {
+  display: flex;
+  min-height: 100vh;
+  padding: 25px;
+}
+
+//- Login
+
+.login {
+  flex-basis: 401px;
+  max-width: 401px;
+  margin: auto;
+
+  .card {
+    border-top: 3px solid $cl-primary;
+    display: block;
+    margin-bottom: 30px;
+
+    &-header {
+      padding: 40px 20px 20px;
+      text-align: center;
+      border-bottom: none;
+    }
+
+    &-body {
+      padding: 20px 30px 15px;
+    }
+  }
+
+  &__img {
+    width: 102px;
+    height: 27px;
+  }
+
+  &__desc {
+    display: block;
+    font-size: 1rem;
+    padding: 10px 0;
+    color: $cl-darkgray-5;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  &__option {
+    padding-top: 15px;
+
+    .input-checkbox-custom {
+      margin: 0;
+    }
+  }
+
+  &__forgot-password {
+    text-align: right;
+
+    a {
+      color: $cl-primary;
+    }
+  }
+
+  &__submit {
+    padding-top: 20px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  &__footer {
+    text-align: center;
+
+    a {
+      color: $cl-primary;
+      margin-left: 4px;
+    }
+  }
+}

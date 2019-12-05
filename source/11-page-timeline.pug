@@ -1,0 +1,117 @@
+extends modules/layout/_page-default
+
+block head
+  +head('Beagle')
+
+block main
+  +header('Timeline')
+  +rightSidebar()
+  +leftSidebar({
+    page: 'pages',
+    link: '11-page-timeline.html'
+  })
+  .page-content
+    .page-head
+      h2.timeline-title Timeline
+      nav(aria-label="breadcrumb" )
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href="#") Home
+          li.breadcrumb-item
+            a(href="#") Pages
+          li.breadcrumb-item
+            a(href="#") Timeline
+    .page-body.container-fluid
+      .row
+        .col-12
+          ul.timeline
+            li.timeline__item
+              .timeline__date
+                span September 16, 2018
+              .timeline__content
+                .timeline__avatar
+                  img(src="images/user-avatar-6.png", alt="")
+                .timeline__header
+                  .timeline__time 4:34 PM
+                  .timeline__author Penelope Thornton
+                  p.timeline__activity
+                    | Pellentesque imperdiet sit
+                    a(href="#") Amet nisl sed mattis
+                    |.
+            li.timeline__item.timeline__item--detail
+              .timeline__date
+                span September 13, 2018
+              .timeline__content
+                .timeline__avatar
+                  img(src="images/user-avatar-1.png", alt="")
+                .timeline__header
+                  .timeline__time 9:54 AM
+                  .timeline__author Kristopher Donny
+                  p.timeline__activity
+                    | Mauris condimentum est
+                    a(href="#") Viverra erat fermentum
+                    |.
+                  .timeline__detail Suspendisse ac libero sed mauris tempor vehicula porttitor non sapien. Aliquam viver...
+            li.timeline__item.timeline__item--detail
+              .timeline__date
+                span August 23, 2018
+              .timeline__content
+                .timeline__avatar
+                  img(src="images/user-avatar-3.png", alt="")
+                .timeline__header
+                  .timeline__time 10:42 AM
+                  .timeline__author Sherwood Clifford
+                  p.timeline__activity
+                    | pellentesque tortor
+                    a(href="#") enim
+                    |.
+                  .timeline__gallery
+                    img.gallery-thumbnail(src="images/thumbnail-1.jpg", alt="Thumbnail")
+                    img.gallery-thumbnail(src="images/thumbnail-2.jpg", alt="Thumbnail")
+                    img.gallery-thumbnail(src="images/thumbnail-3.jpg", alt="Thumbnail")
+                    img.gallery-thumbnail(src="images/thumbnail-4.jpg", alt="Thumbnail")
+            li.timeline__item.timeline__item--detail
+              .timeline__date
+                span August 6, 2018
+              .timeline__content
+                .timeline__avatar
+                  img(src="images/user-avatar-4.png", alt="")
+                .timeline__header
+                  .timeline__time 4:34 PM
+                  .timeline__author Benji Harper
+                  p.timeline__activity
+                    | Mauris condimentum est
+                    a(href="#") Viverra erat fermentum
+                    |.
+                  .timeline__detail Quisque condimentum enim nec porttitor egestas. Morbi fermentum in ante volutpat...
+            li.timeline__item
+              .timeline__date
+                span August 4, 2018
+              .timeline__content
+                .timeline__avatar
+                  img(src="images/user-avatar-5.png", alt="")
+                .timeline__header
+                  .timeline__time 12:02 PM
+                  .timeline__author Justine Myranda
+                  p.timeline__activity
+                    | Pellentesque imperdiet sit
+                    a(href="#") Amet nisl sed mattis
+                    |.
+            li.timeline__item.timeline__item--detail
+              .timeline__date
+                span June 11, 2018
+              .timeline__content
+                .timeline__avatar
+                  img(src="images/user-avatar-3.png", alt="")
+                .timeline__header
+                  .timeline__time 6:25 AM
+                  .timeline__author Sherwood Clifford
+                  p.timeline__activity
+                    | pellentesque tortor
+                    a(href="#") enim
+                    |.
+                    blockquote.timeline__blockquote
+                      p Quisque condimentum enim nec porttitor egestas.
+                      .blockquote-footer Aliquam viverra ornare dolor.
+            li.timeline__item
+              a.timeline__load-more(href="#") Load more

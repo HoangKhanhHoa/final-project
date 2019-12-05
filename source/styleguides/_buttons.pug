@@ -1,0 +1,172 @@
+//-------------------------------------------------------
+//- Styleguides :: Buttons
+//-------------------------------------------------------
+
+//- Buttons :: Type
+-
+  var buttonTypes = [
+    { type: 'primary', text: 'Primary'},
+    { type: 'secondary', text: 'Secondary' },
+    { type: 'warning', text: 'Warning' },
+    { type: 'danger', text: 'Danger' },
+    { type: 'success', text: 'Success' },
+  ];
+
+  var buttonSizes = [
+    { size: 'xs' },
+    { size: 'sm' },
+    { size: 'lg' },
+    { size: 'xl' }
+  ];
+
+h2 Buttons Basic
+.row
+  each val in buttonTypes
+    .col-3
+      .code-example
+        .demo
+          +buttons({
+            text: val.text,
+            type: val.type
+          })
+        pre
+          code
+            | +buttons({
+            |   text: '#{val.text}',
+            |   type: '#{val.type}'
+            | })
+
+//- Buttons :: Icon
+h2 Button Icon
+-
+  var buttonIcon = [
+    { type: 'primary', text: 'Primary', iconFont: 'cloud-done' },
+    { type: 'secondary', text: 'Secondary', iconFont: 'globe' },
+    { type: 'warning', text: 'Warning', iconFont: 'alert-triangle' },
+    { type: 'danger', text: 'Danger', iconFont: 'alert-circle' },
+    { type: 'success', text: 'Success', iconFont: 'check' },
+  ];
+.row
+  each val in buttonIcon
+    .col-3
+      .code-example
+        .demo
+          +buttons({
+            text: val.text,
+            type: val.type,
+            iconFont: val.iconFont
+          })
+        pre
+          code
+            | +buttons({
+            |   text: '#{val.text}',
+            |   type: '#{val.type}',
+            |   iconFont: '#{val.iconFont}'
+            | })
+
+//- Buttons :: Size
+h2 Button Size
+
+h3 Standard
+.row
+  each val in buttonSizes
+    .col-3
+      .code-example
+        .demo
+          +buttons({
+            text: 'Secondary',
+            type: 'secondary',
+            size: val.size
+          })
+        pre
+          code
+            | +buttons({
+            |   text: 'Secondary',
+            |   type: 'secondary',
+            |   size: '#{val.size}'
+            | })
+
+h3 With Icons
+.row
+  each val in buttonSizes
+    .col-3
+      .code-example
+        .demo
+          +buttons({
+            text: 'Primary',
+            type: 'primary',
+            size: val.size,
+            iconFont: 'cloud-done'
+          })
+        pre
+          code
+            | +buttons({
+            |   text: 'Primary',
+            |   type: 'primary',
+            |   size: '#{val.size}',
+            |   iconFont: 'cloud-done'
+            | })
+
+//- Button :: Rounded
+h2 Button Rounded
+
+h3 Standard
+.row
+  each val in buttonTypes
+    .col-3
+      .code-example
+        .demo
+          +buttons({
+            text: val.text,
+            type: val.type,
+            isCircle: true,
+          })
+        pre
+          code
+            | +buttons({
+            |   text: '#{val.text}',
+            |   type: '#{val.type}',
+            |   isCircle: true
+            | })
+
+h3 With Icons
+.row
+  each val in buttonIcon
+    .col-3
+      .code-example
+        .demo
+          +buttons({
+            text: val.text,
+            type: val.type,
+            iconFont: val.iconFont,
+            isCircle: true,
+          })
+        pre
+          code
+            | +buttons({
+            |   text: '#{val.text}',
+            |   type: '#{val.type}',
+            |   iconFont: '#{val.iconFont}',
+            |   isCircle: true
+            | })
+
+h3 With Different Size
+.row
+  each val in buttonSizes
+    .col-3
+      .code-example
+        .demo
+          +buttons({
+            text: 'Primary',
+            type: 'primary',
+            size: val.size,
+            isCircle: true,
+          })
+        pre
+          code
+            | +buttons({
+            |   text: 'Primary',
+            |   type: 'primary',
+            |   size: '#{val.size}',
+            |   isCircle: true
+            | })

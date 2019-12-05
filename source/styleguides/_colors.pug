@@ -1,0 +1,142 @@
+//-------------------------------------------------------
+//- Styleguides :: Colors
+//-------------------------------------------------------
+
+-
+  var colors = [
+    { key: '$cl-white', color: '#fff' },
+    { key: '$cl-black', color: '#000' },
+    { key: '$cl-primary', color: '#4285f4' },
+    { key: '$bg-primary-hover', color: '#4c8bf5' },
+    { key: '$bg-primary-actice', color: '#2572f2' },
+    { key: '$cl-secondary', color: '#404040' },
+    { key: '$bg-secondary-active', color: '#e3e3e3' },
+    { key: '$cl-warning', color: '#fbbc05' },
+    { key: '$bg-warning-hover', color: '#fbbf0f' },
+    { key: '$bg-warning-actice', color: '#dea604' },
+    { key: '$cl-danger', color: '#ea4335' },
+    { key: '$bg-danger-hover', color: '#eb4c3e' },
+    { key: '$bg-danger-actice', color: '#e72919' },
+    { key: '$cl-success', color: '#34a853' },
+    { key: '$bg-success-hover', color: '#36b057' },
+    { key: '$bg-success-actice', color: '#2d9147' },
+  ];
+
+.row
+  each val in colors
+    .col-3
+      .code-example
+        .demo(style=`background-color: ${val.color}; width: 100%; height: 100px`)
+        pre
+          code
+            | #{val.key}: #{val.color}
+
+-
+  var colorWhiteSmokes = [
+    { key: '$cl-whitesmoke-1', color: '#fafafa' },
+    { key: '$cl-whitesmoke-2', color: '#f7f7f7' },
+    { key: '$cl-whitesmoke-3', color: '#f5f5f5' },
+    { key: '$cl-whitesmoke-4', color: '#f2f2f2' },
+    { key: '$cl-whitesmoke-5', color: '#f0f0f0' },
+  ];
+
+h3 Color White Smoke
+
+.row
+  each val in colorWhiteSmokes
+    .col-12
+      .code-example
+        .demo(style=`background-color: ${val.color}; width: 100%; height: 40px; line-height: 40px; padding: 0 1.5rem;`)
+          | #{val.key}: #{val.color}
+
+-
+  var colorLightGray = [
+    { key: '$cl-lightgray-1', color: '#eee' },
+    { key: '$cl-lightgray-2', color: '#ededed' },
+    { key: '$cl-lightgray-3', color: '#ebebeb' },
+    { key: '$cl-lightgray-4', color: '#e6e6e6' },
+    { key: '$cl-lightgray-5', color: '#e4e4e4' },
+    { key: '$cl-lightgray-6', color: '#e3e3e3' },
+    { key: '$cl-lightgray-7', color: '#e0e0e0' },
+    { key: '$cl-lightgray-8', color: '#dee2e6' },
+    { key: '$cl-lightgray-9', color: '#d5d8de' },
+    { key: '$cl-lightgray-10', color: '#d1d1d1' },
+  ]
+
+h3 Color Light Gray
+
+.row
+  each val in colorLightGray
+    .col-12
+      .code-example
+        .demo(style=`background-color: ${val.color}; width: 100%; height: 40px; line-height: 40px; padding: 0 1.5rem;`)
+          | #{val.key}: #{val.color}
+
+-
+  var colorSilver = [
+    { key: '$cl-silver-1', color: '#ccc' },
+    { key: '$cl-silver-2', color: '#c9c9c9' },
+    { key: '$cl-silver-3', color: '#c4c4c4' },
+    { key: '$cl-silver-4', color: '#c2c2c2' },
+    { key: '$cl-silver-5', color: '#bdc0c7' },
+    { key: '$cl-silver-6', color: '#bababa' },
+    { key: '$cl-silver-7', color: '#b3b3b3' },
+    { key: '$cl-silver-8', color: '#b0b0b0' },
+  ]
+
+h3 Color Silver
+
+.row
+  each val in colorSilver
+    .col-12
+      .code-example
+        .demo(style=`background-color: ${val.color}; width: 100%; height: 40px; line-height: 40px; padding: 0 1.5rem;`)
+          | #{val.key}: #{val.color}
+
+-
+  var colorGray = [
+    { key: '$cl-gray', color: '#808080' },
+    { key: '$cl-gray-1', color: '#ababab' },
+    { key: '$cl-gray-2', color: '#aaa' },
+    { key: '$cl-gray-3', color: '#a6a6a6' },
+    { key: '$cl-gray-4', color: '#a1a1a1' },
+    { key: '$cl-gray-5', color: '#999' },
+    { key: '$cl-gray-6', color: '#9d9d9d' },
+    { key: '$cl-gray-7', color: '#8c8c8c' },
+    { key: '$cl-gray-8', color: '#8a8a8a' },
+    { key: '$cl-gray-9', color: '#878787' },
+    { key: '$cl-gray-10', color: '#7b7b7b' },
+    { key: '$cl-gray-11', color: '#737373' },
+    { key: '$cl-gray-12', color: '#707070' },
+  ]
+
+h3 Color Gray
+
+.row
+  each val in colorGray
+    .col-12
+      .code-example
+        .demo(style=`background-color: ${val.color}; width: 100%; height: 40px; line-height: 40px; padding: 0 1.5rem; color: #fff`)
+          | #{val.key}: #{val.color}
+
+-
+  var colorDarkGray = [
+    { key: '$cl-darkgray-1', color: '#6b6b6b' },
+    { key: '$cl-darkgray-1', color: '#696969' },
+    { key: '$cl-darkgray-1', color: '#666' },
+    { key: '$cl-darkgray-1', color: '#5f5f5f' },
+    { key: '$cl-darkgray-1', color: '#5a5a5a' },
+    { key: '$cl-darkgray-1', color: '#595858' },
+    { key: '$cl-darkgray-1', color: '#504e4e' },
+    { key: '$cl-darkgray-1', color: '#424242' },
+    { key: '$cl-darkgray-1', color: '#272727' },
+  ]
+
+h3 Color Dark Gray
+
+.row
+  each val in colorDarkGray
+    .col-12
+      .code-example
+        .demo(style=`background-color: ${val.color}; width: 100%; height: 40px; line-height: 40px; padding: 0 1.5rem; color: #fff;`)
+          | #{val.key}: #{val.color}

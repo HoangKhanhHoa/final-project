@@ -1,0 +1,218 @@
+// ======================================================
+// Base :: Global like html, body, img, a, ul
+// ======================================================
+
+html {
+  font-size: $font-size-base - 1;
+  overflow-x: hidden;
+}
+
+body {
+  background: $cl-lightgray-1;
+  font-size: 1rem;
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+  color: $cl-secondary;
+  margin: 0;
+  line-height: 1.42857143;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  color: $cl-primary;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+    box-shadow: none;
+    text-decoration: none;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+label {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: $cl-darkgray-3;
+}
+
+input {
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 1000px $cl-white inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+textarea:disabled {
+  resize: none;
+}
+
+//- Page Content, Page Head, Page Body
+
+.page-content {
+  margin-left: 230px;
+  min-height: 100%;
+  padding-top: 61px;
+
+  @include breakpoint-down(phone) {
+    margin-left: 0;
+  }
+}
+
+.page-head {
+  padding: 20px 25px 10px;
+
+  @include breakpoint-down(phone) {
+    padding: 18px 10px 0;
+    display: none;
+  }
+}
+
+.page-body {
+  padding: 25px;
+
+  @include breakpoint-down(phone) {
+    height: 100%;
+    overflow: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @include breakpoint-down(smallphone) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .row {
+    @include breakpoint-down(smallphone) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+}
+
+//- Rewrite Breadcrumb
+
+.breadcrumb {
+  background: transparent;
+  padding: 3px 0;
+  margin-bottom: 7px;
+  line-height: 16px;
+
+  &-item {
+    font-size: $font-size-base;
+    font-weight: 300;
+
+    &:nth-child(n+2) {
+      padding-left: 0;
+    }
+  }
+
+  &-item:before {
+    padding: 0 5px;
+    color: $cl-gray-13;
+  }
+
+  a {
+    color: $cl-darkgray-10;
+  }
+}
+
+//- Rewrite Card
+
+.card {
+  background-color: $cl-white;
+  margin-bottom: 25px;
+  box-shadow: 0 0 4px 0 rgba($cl-black, .04);
+  border-width: 0;
+  border-radius: 3px;
+}
+
+.card-header {
+  font-size: 18px;
+  font-weight: 300;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 20px;
+  margin: 0 20px;
+  border-bottom-width: 0;
+  border-radius: 3px 3px 0 0;
+  background-color: transparent;
+
+  &--border {
+    border-bottom: 1px solid $cl-lightgray-11;
+    margin: 0 20px 8px;
+    padding-bottom: 15px;
+  }
+}
+
+.card-body {
+  padding: 8px 20px 20px;
+  border-radius: 0 0 3px 3px;
+}
+
+//- Scroll Top Button
+
+.scroll-top {
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: $cl-white;
+  background-color: rgba($cl-black, .6);
+  padding: 0 14px;
+  display: none;
+  transition: background-color .2s ease;
+  border-radius: 4px;
+  z-index: 1071;
+
+  &:before {
+    content: '\f2fc';
+    font-family: $font-icon;
+    font-size: 33px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: rgba($cl-black, .8);
+  }
+}
+
+//- Backdrop Menu Responsive
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($cl-black, .6);
+  z-index: 1003;
+  display: none;
+
+  &--show {
+    display: block;
+  }
+}
