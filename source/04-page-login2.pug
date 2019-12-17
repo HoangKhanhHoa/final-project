@@ -1,7 +1,7 @@
 extends modules/layout/_page-default
 
 block head
-  +head('Beagle')
+  +head('Sign In')
 
 block main
   .container-fluid.main-content
@@ -11,7 +11,7 @@ block main
           img.login__img(src="images/beagle-logo.png", alt="Beagle Logo")
           span.login__desc Please enter your user information.
         .card-body
-          form(action="#" method="POST")
+          form(action="home.html" method="POST")
             +group-input-field({
               id: 'username',
               type: 'text',
@@ -30,10 +30,10 @@ block main
                   label: 'Remember Me',
                 })
               .col-6.login__forgot-password
-                a(href="#") Forgot Password?
+                a(href="07-page-forgot-pasword.html") Forgot Password?
             .form-group.form-custom.row.login__control
               .col-6
-                a.btn.button.button--secondary.button--xl(href="#") Register
+                a.btn.button.button--secondary.button--xl(href="06-page-sign-up.html") Register
               .col-6
                 +buttons({
                   text: 'Sign in',
