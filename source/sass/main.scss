@@ -1,0 +1,64 @@
+// We architecting this project follow as the "7-1 Pattern" (7 folders, 1 file)
+// For more detail about this pattern
+// (https://sass-guidelin.es/#the-7-1-pattern)
+
+// 1. Vendors
+// ----------
+// https://getbootstrap.com/docs/4.0/getting-started/theming/#sass
+// Need vendors go first because we inherit all of sass files of Bootstrap 4
+@import 'bootstrap/scss/bootstrap';
+@import 'material-design-iconic-font/scss/material-design-iconic-font';
+@import 'vendor/bootstrap-datetimepicker';
+@import 'vendor/perfect-scrollbar';
+@import 'vendor/jqvmap';
+@import 'select2/src/scss/core';
+
+// 2. Abstracts
+// ------------
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+
+// 3. Base
+// -------
+@import 'base/global';
+@import 'base/typography';
+@import 'base/colors';
+@import 'base/images';
+
+// 4. Layout
+// ---------
+@import 'layout/header';
+@import 'layout/sidebar';
+@import 'layout/blank-page';
+// @import 'layout/footer';
+
+// 5. Components
+// -------------
+@import 'components/buttons';
+@import 'components/input';
+@import 'components/checkbox';
+@import 'components/radio-button';
+@import 'components/switch-button';
+@import 'components/selectbox';
+@import 'components/date-picker';
+@import 'components/file-upload';
+
+// 6. Extensions
+// -------------
+@import 'extensions/fonts';
+
+// 7. Pages
+// -------------
+@import 'pages/home';
+@import 'pages/03-page-login';
+@import 'pages/04-page-login2';
+@import 'pages/05-page-404';
+@import 'pages/06-page-sign-up';
+@import 'pages/07-page-forgot-password';
+@import 'pages/08-page-profile';
+@import 'pages/09-pricing-table';
+@import 'pages/10-pricing-tablev2';
+@import 'pages/11-page-timeline';
+@import 'pages/12-page-timelinev2';
+@import 'pages/13-page-invoice';

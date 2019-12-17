@@ -1,0 +1,256 @@
+// ======================================================
+// Pages :: Timeline
+// ======================================================
+
+.timeline {
+  $this: &;
+  margin: 0 auto 40px;
+  padding: 0;
+  padding-bottom: 20px;
+  max-width: 840px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    width: 2px;
+    background: $bd-secondary;
+    left: 170px;
+    margin-left: -1px;
+
+    @include breakpoint-down(phone) {
+      left: 50%;
+      margin-left: -1px;
+      top: -35px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 210px;
+    list-style: none;
+    margin-bottom: 30px;
+
+    &:before {
+      @include circle(16px);
+      content: '';
+      position: absolute;
+      top: 34.5px;
+      left: 162px;
+      border: 2px solid $cl-silver-1;
+      background: $cl-lightgray-2;
+    }
+
+    &:nth-child(4n+1):before {
+      border-color: $cl-primary;
+    }
+
+    &:nth-child(4n+2):before {
+      border-color: $cl-warning;
+    }
+
+    &:nth-child(4n+3):before {
+      border-color: $cl-success;
+    }
+
+    &:nth-child(4n+4):before {
+      border-color: $cl-danger;
+    }
+
+    &:last-child {
+      &:before {
+        content: none;
+      }
+
+      @include breakpoint-down(phone) {
+        text-align: center;
+        padding: 0;
+        margin-bottom: 40px;
+        margin-top: 40px;
+      }
+    }
+
+    &--detail {
+      #{$this}__avatar {
+        vertical-align: top;
+      }
+
+      #{$this}__header,
+      #{$this}__time {
+        line-height: 21px;
+      }
+    }
+
+    @include breakpoint-down(phone) {
+      padding-left: 0;
+      margin-top: 60px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__date {
+    @include truncate-oneline;
+    position: absolute;
+    left: 0;
+    top: 34px;
+    width: 145px;
+    text-align: right;
+
+    span {
+      @include breakpoint-down(phone) {
+        background-color: $cl-lightgray-7;
+        padding: 5px 8px;
+        border-radius: 4px;
+        line-height: 25px;
+      }
+    }
+
+    @include breakpoint-down(phone) {
+      width: 100%;
+      left: 0;
+      top: -40px;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    position: relative;
+    background-color: $cl-white;
+    padding: 25px 30px 25px 28px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba($cl-white, .07);
+    min-height: 85px;
+
+    &:before {
+      @include square(10px);
+      content: '';
+      position: absolute;
+      top: 37.5px;
+      left: -5px;
+      background: $cl-white;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      @include square(10px);
+      content: '';
+      box-shadow: -1px 1px 5px rgba($cl-white, .07);
+      position: absolute;
+      top: 37.5px;
+      left: -5px;
+      background: transparent;
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+
+    @include breakpoint-down(smallphone) {
+      padding: 15px 18px;
+    }
+  }
+
+  &__avatar {
+    @include circle(35px);
+    float: left;
+    overflow: hidden;
+    vertical-align: middle;
+
+    img {
+      @include square(100%);
+    }
+  }
+
+  &__header {
+    padding: 7px 0 0 46px;
+
+    @include breakpoint-down(phone) {
+      padding-top: 0;
+    }
+  }
+
+  &__time {
+    float: right;
+    color: $cl-gray-1;
+  }
+
+  &__author {
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  &__activity {
+    display: inline-block;
+    margin: 0;
+
+    a {
+      margin-left: 4px;
+    }
+  }
+
+  &__detail {
+    @include truncate-oneline;
+    color: $cl-gray-8;
+    margin-top: 4px;
+  }
+
+  &__gallery {
+    margin-top: 12px;
+
+    .gallery-thumbnail {
+      display: inline-block;
+      max-width: 100px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__blockquote {
+    margin: 10px 0 0 5px;
+    padding: 4px 10px;
+    border-left: 4px solid $cl-lightgray-7;
+    color: $cl-gray-8;
+    font-size: $font-size-medium;
+
+    .blockquote-footer {
+      font-size: 1rem;
+
+      &:before {
+        content: '\2014\00A0';
+      }
+    }
+  }
+
+  &__load-more {
+    background: $bd-secondary;
+    border-radius: 2px;
+    padding: 5px 9px;
+    color: $cl-darkgray-8;
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    left: 131px;
+
+    &:hover {
+      color: $cl-darkgray-8;
+    }
+
+    @include breakpoint-down(phone) {
+      position: relative;
+      left: 0;
+    }
+  }
+
+  @include breakpoint-down(phone) {
+    padding: 0;
+  }
+}
+
+.timeline-title {
+  margin: 6px 0 5px;
+  color: $cl-darkgray-1;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 36px;
+  letter-spacing: -1px;
+}

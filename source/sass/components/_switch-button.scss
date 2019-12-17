@@ -1,0 +1,154 @@
+// ======================================================
+// Components :: Button Switch
+// ======================================================
+
+.switch-button {
+  display: inline-block;
+}
+
+.switch-control {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  &:checked + .switch-show {
+    background-color: $cl-primary;
+
+    &:before {
+      content: attr(data-on);
+      transform: translateX(-26px);
+    }
+
+    &:after {
+      transform: translate(30px, -50%);
+    }
+
+    //- Modifier: Type
+
+    &.switch-show--success {
+      background-color: $cl-success;
+    }
+
+    &.switch-show--warning {
+      background-color: $cl-warning;
+    }
+
+    &.switch-show--danger {
+      background-color: $cl-danger;
+    }
+
+    //- Modifier: Size When Checked
+
+    &.switch-show--xs {
+      &:before {
+        transform: translateX(-20px);
+      }
+
+      &:after {
+        transform: translate(28px, -50%);
+      }
+    }
+
+    &.switch-show--sm {
+      &:before {
+        transform: translateX(-24px);
+      }
+    }
+
+    &.switch-show--lg {
+      &:before {
+        transform: translateX(-30px);
+      }
+
+      &:after {
+        transform: translate(32px, -50%);
+      }
+    }
+  }
+}
+
+.switch-show {
+  display: inline-block;
+  border-radius: 50px;
+  background-color: $cl-silver-7;
+  cursor: pointer;
+  width: 60px;
+  height: 27px;
+  position: relative;
+  transition: .4s all;
+
+  &:before {
+    content: attr(data-off);
+    position: absolute;
+    font-size: $font-size-small - 1;
+    font-weight: 600;
+    line-height: 27px;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    padding-right: 10px;
+    color: $cl-white;
+    border-radius: 50px;
+    transition: .4s all;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    margin: 0 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $cl-white;
+    border-radius: 50px;
+    transition: .4s all;
+  }
+
+  //- Modifier: Size
+
+  &--xs {
+    height: 20px;
+    line-height: 16px;
+    width: 50px;
+
+    &:before {
+      line-height: 21px;
+    }
+
+    &:after {
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  &--sm {
+    height: 24px;
+    width: 57px;
+    line-height: 20px;
+
+    &:before {
+      line-height: 25px;
+    }
+
+    &:after {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &--lg {
+    height: 30px;
+    line-height: 26px;
+    width: 65px;
+
+    &:before {
+      line-height: 31px;
+    }
+
+    &:after {
+      height: 22px;
+      width: 22px;
+    }
+  }
+}

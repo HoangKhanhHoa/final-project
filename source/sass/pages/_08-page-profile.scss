@@ -1,0 +1,201 @@
+// ======================================================
+// Pages :: Profile
+// ======================================================
+
+.user-profile {
+  &__display {
+    margin-bottom: 30px;
+    border-radius: 2px;
+    background: $cl-white;
+  }
+
+  &__bg {
+    max-height: 300px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+
+      @include breakpoint-down(phone) {
+        min-height: 130px;
+      }
+    }
+  }
+
+  &__main {
+    position: relative;
+    padding: 11px 20px;
+  }
+
+  &__avatar {
+    position: absolute;
+    left: 20px;
+    top: -50px;
+    border-radius: 50%;
+    background-color: $cl-white;
+
+    img {
+      @include circle(110px);
+      border: 3px solid $cl-white;
+    }
+  }
+
+  &__infor {
+    line-height: 20px;
+    padding-left: 130px;
+  }
+
+  &__name {
+    font-size: $font-size-large;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__account {
+    line-height: 21px;
+    color: $cl-darkgray-4;
+
+    i {
+      margin-right: 4px;
+    }
+  }
+
+  &__details {
+    margin-top: 15px;
+
+    p:first-child {
+      text-transform: uppercase;
+      font-size: $font-size-small;
+      color: $cl-darkgray-4;
+      margin: 0;
+    }
+
+    p:last-child {
+      font-size: $font-size-large;
+      margin: 0;
+    }
+  }
+
+  &__about-me {
+    table {
+      width: 100%;
+    }
+
+    td {
+      padding: 12px 0;
+    }
+
+    .icon {
+      width: 33px;
+
+      i {
+        font-size: 20px;
+        vertical-align: middle;
+        margin-bottom: 1px;
+      }
+    }
+
+    .item {
+      width: 34%;
+    }
+  }
+
+  .card-title {
+    margin: 0;
+  }
+
+  .card-subtitle {
+    font-size: 1rem;
+    color: $cl-gray-12;
+    margin: 0;
+  }
+}
+
+.widget {
+  $this: &;
+  background: $cl-white;
+  border-radius: 3px;
+  padding: 20px;
+  margin-bottom: 25px;
+
+  &--full {
+    padding: 0;
+
+    #{$this}__head {
+      padding: 20px 20px 10px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__head {
+    border-radius: 3px 3px 0 0;
+    margin-bottom: 20px;
+
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+
+  &__tools {
+    float: right;
+    margin-left: 10px;
+
+    i {
+      display: inline-block;
+      font-size: 20px;
+      line-height: 25px;
+      vertical-align: middle;
+      cursor: pointer;
+      color: $cl-silver-6;
+      min-width: 20px;
+      text-align: center;
+
+      &:nth-child(n+2) {
+        margin-left: 2px;
+      }
+
+      &:hover {
+        color: $cl-gray-3;
+      }
+    }
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    font-weight: 300;
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  .user-avatar {
+    img {
+      @include circle(30px);
+      margin-right: 10px;
+    }
+  }
+
+  table {
+    td {
+      padding: 12px 10px;
+      vertical-align: middle;
+    }
+
+    .actions {
+      text-align: center;
+
+      a {
+        color: $cl-gray-4;
+        font-size: $font-size-large;
+        line-height: 18px;
+      }
+
+      a:hover {
+        color: $cl-gray;
+      }
+    }
+  }
+}

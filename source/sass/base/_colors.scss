@@ -1,0 +1,33 @@
+// ======================================================
+// Base :: Colors
+// ======================================================
+
+.color {
+  &--white {
+    color: $cl-white;
+  }
+
+  &--black {
+    color: $cl-black;
+  }
+
+  &--primary {
+    color: $cl-primary;
+  }
+
+  &--secondary {
+    color: $cl-secondary;
+  }
+
+  &--warning {
+    color: $cl-warning;
+  }
+
+  &--danger {
+    color: $cl-danger;
+  }
+
+  &--success {
+    color: $cl-success;
+  }
+}

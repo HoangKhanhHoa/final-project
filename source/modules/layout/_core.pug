@@ -1,0 +1,25 @@
+include ../page-list/_page-list
+include ../_head
+include ../_header
+include ../_sidebar
+include ../menu/_menu
+include ../_buttons
+include ../_input
+include ../_checkbox
+include ../_radio-button
+include ../_switch
+include ../_selectbox
+include ../_file-upload
+include ../_date-picker
+
+doctype html
+html(lang='en')
+  head
+    block head
+
+  body
+    block body
+    span.scroll-top.js-scroll-top
+    .backdrop.js-backdrop
+    block scripts
+      script(src='js/main.js')

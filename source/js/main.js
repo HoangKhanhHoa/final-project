@@ -1,0 +1,23 @@
+//=require jquery/dist/jquery.min.js
+//=require popper.js/dist/umd/popper.min.js
+//=require bootstrap/dist/js/bootstrap.min.js
+//=require moment/moment.js
+//=require moment/locale/ja.js
+//=require bootstrap-datetime-picker/js/bootstrap-datetimepicker.min.js
+//=require select2/dist/js/select2.min.js
+//=require perfect-scrollbar/dist/perfect-scrollbar.min.js
+//=require jquery.flot/jquery.flot.js
+//=require jquery.flot/jquery.flot.pie.js
+//=require flot-orderbars/js/jquery.flot.orderBars.js
+//=require flot.curvedlines/curvedLines.js
+//=require jquery.flot.tooltip/js/jquery.flot.tooltip.min.js
+//=require jquery-sparkline/jquery.sparkline.min.js
+//=require jquery-ui-dist/jquery-ui.min.js
+//=require jqvmap/dist/jquery.vmap.min.js
+//=require jqvmap/dist/maps/jquery.vmap.world.js
+//=require vendor/_jquery.flot.orderBars.js
+//=require vendor/_countUp.min.js
+
+//=require _functions.js
+//=require _chart.js
+//=require _custom.js

@@ -1,0 +1,57 @@
+//-------------------------------------------------------
+//- Modules :: Radio Button
+//-------------------------------------------------------
+
+//- Input Radio
+mixin input-radio({ name, id, value, checked })
+  input.radio-custom(
+    type='radio'
+    name= name ? name : null
+    id= id ? id : null
+    value= value ? value : null
+    checked= (checked === true) ? true : false
+  )&attributes(attributes)
+
+//- Group Input Radio
+mixin group-input-radio({ name, id, label, value, checked, isInline, isColor })
+  label.input-radio-custom&attributes(attributes)
+    +input-radio({name, id, value, checked})
+    span.radio-label-custom(
+      class= isColor ? 'radio-label-color' : null
+    )= label
+
+//- Group Input Radio Disabled
+mixin group-input-radio-disabled({ name, id, label, value, checked, isInline, isColor })
+  label.input-radio-custom&attributes(attributes)
+    +input-radio({name, id, value, checked})(
+      disabled
+    )
+    span.radio-label-custom(
+      class= isColor ? 'radio-label-color' : null
+    )= label
+
+
+//- Group Input Radio Valid
+mixin group-input-radio-valid({ name, id, label, value, checked, isInline, isColor })
+  label.input-radio-custom.radio-valid&attributes(attributes)
+    +input-radio({name, id, value, checked})
+    span.radio-label-custom(
+      class= isColor ? 'radio-label-color' : null
+    )= label
+
+//- Group Input Radio Invalid
+mixin group-input-radio-invalid({ name, id, label, value, checked, isInline, isColor })
+  label.input-radio-custom.radio-invalid&attributes(attributes)
+    +input-radio({name, id, value, checked})
+    span.radio-label-custom(
+      class= isColor ? 'radio-label-color' : null
+    )= label
+
+//- Group Input Radio Icon
+mixin group-input-radio-icon({ name, id, value, checked, icon })
+  label.input-radio-custom.input-radio-custom--icon(
+    class="input-radio-custom--inline"
+  )&attributes(attributes)
+    +input-radio({name, id, value, checked})
+    span.radio-icon-custom
+      i.zmdi(class=`zmdi-${icon}`)

@@ -1,0 +1,100 @@
+// ======================================================
+// Pages :: Pricing Table v2
+// ======================================================
+
+.pricing-tables__item {
+  &.pricing-tables--color {
+    svg {
+      fill: $cl-white;
+    }
+  }
+
+  &--primary {
+    &.pricing-tables--color {
+      background: $cl-lightblue-6;
+      border-color: $cl-lightblue-6;
+
+      .button:active {
+        box-shadow: inset 0 2px 0 $bd-primary-hover;
+        background-color: $bg-primary-active;
+        border-color: $bg-primary-active;
+        border-top-color: $bd-primary-active;
+      }
+
+      .pricing-tables__divider {
+        border-color: $cl-lightblue-7;
+      }
+    }
+  }
+
+  &--warning {
+    &.pricing-tables--color {
+      background: $cl-orange-1;
+      border-color: $cl-orange-1;
+
+      .button:active {
+        box-shadow: inset 0 2px 0 $bd-warning-hover;
+        background-color: $bg-warning-active;
+        border-color: $bg-warning-active;
+        border-top-color: $bd-warning-active;
+      }
+
+      .pricing-tables__divider {
+        border-color: $cl-orange-2;
+      }
+    }
+  }
+
+  &--danger {
+    &.pricing-tables--color {
+      background: $cl-pink-1;
+      border-color: $cl-pink-1;
+
+      .button:active {
+        box-shadow: inset 0 2px 0 $bd-danger-hover;
+        background-color: $bg-danger-active;
+        border-color: $bg-danger-active;
+        border-top-color: $bd-danger-active;
+      }
+
+      .pricing-tables__divider {
+        border-color: $cl-pink-2;
+      }
+    }
+  }
+
+  &--success {
+    &.pricing-tables--color {
+      background: $cl-lightgreen-3;
+      border-color: $cl-lightgreen-3;
+
+      .button:active {
+        box-shadow: inset 0 2px 0 $bd-success-hover;
+        background-color: $bg-success-active;
+        border-color: $bg-success-active;
+        border-top-color: $bd-success-active;
+      }
+
+      .pricing-tables__divider {
+        border-color: $cl-lightgreen-4;
+      }
+    }
+  }
+}
+
+.pricing-tables--color {
+  color: $cl-white;
+
+  .button {
+    background: transparent;
+    border-color: rgba($cl-white, .5);
+    border-width: 2px;
+    height: 40px;
+
+    &:hover {
+      background-color: rgba($cl-white, .1);
+      box-shadow: none;
+      border-color: $cl-white;
+    }
+  }
+}

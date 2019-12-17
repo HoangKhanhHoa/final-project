@@ -1,0 +1,55 @@
+//-------------------------------------------------------
+//- Modules :: Menu
+//-------------------------------------------------------
+
+mixin menu({page, link})
+  ul.nav
+    each val in datamenu.listitem
+      if (typeof val.link === "undefined")
+        li.divider= val.item
+      else
+        li.nav__item(
+          class= val.sub ? "parent" : null
+        )
+          a.nav__link(
+            href= (val.collapse === false) ? (val.link ? val.link : "#")  : (val.link ? `#${val.link}` : "#")
+            class= (val.link === page) ? "nav__link--active" : null
+            data-toggle= (val.collapse !== false) ? "collapse" : null
+            aria-expanded= (val.collapse !== false) ? "false" : null
+          )
+            if val.icon
+              i.nav__icon(class= val.icon ? val.icon : null)
+            span.nav__text= val.item
+          if val.sub
+            ul.sub-menu
+              each subVal in val.sub
+                li.nav__item(
+                  class= subVal.sub ? "parent" : null
+                  class= (subVal.link === link) ? "nav--active" : null
+                )
+                  a.nav__link(
+                    href= subVal.sub ? `#${subVal.link}` : subVal.link
+                    class= (subVal.link === link) ? "nav__link--active" : null
+                    data-toggle= subVal.sub ? "collapse" : null
+                    aria-expanded= subVal.sub ? "false" : null
+                  )= subVal.item
+                    if subVal.badge
+                      span.badge.badge--primary New
+                  if subVal.sub
+                    ul.sub-menu.child-one
+                      each subVal2 in subVal.sub
+                        li.nav__item(
+                          class= subVal2.sub ? "parent" : null
+                        )
+                          a.nav__link(
+                            href= subVal2.sub ? `#${subVal2.link}` : `${subVal2.link}`
+                            data-toggle= subVal2.sub ? "collapse" : null
+                            aria-expanded= subVal2.sub ? "false" : null
+                          )= subVal2.item
+                          if subVal2.sub
+                            ul.sub-menu.child-two
+                              each subVal3 in subVal2.sub
+                                li.nav__item
+                                  a.nav__link(
+                                    href= subVal3.link ? `${subVal3.link}` : "#"
+                                  )= subVal3.item

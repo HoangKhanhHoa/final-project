@@ -1,0 +1,35 @@
+//-------------------------------------------------------
+//- Modules :: Button Switch
+//-------------------------------------------------------
+
+mixin button-switch({ id, name, isOn, type, size })
+  .switch-button&attributes(attributes)
+    input.switch-control(
+      type="checkbox"
+      id= id
+      name= name
+      checked= (isOn === true) ? true : false
+    )
+    label.switch-show(
+      for=id
+      data-on="ON"
+      data-off="OFF"
+      class= size ? `switch-show--${size}` : null
+      class= type ? `switch-show--${type}` : null
+    )
+
+mixin yes-no-switch({ id, name, isOn, type, size })
+  .switch-button&attributes(attributes)
+    input.switch-control(
+      type="checkbox"
+      id= id
+      name= name
+      checked= (isOn === true) ? true : false
+    )
+    label.switch-show(
+      for=id
+      data-on="YES"
+      data-off="NO"
+      class= size ? `switch-show--${size}` : null
+      class= type ? `switch-show--${type}` : null
+    )

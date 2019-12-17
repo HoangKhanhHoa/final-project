@@ -1,0 +1,147 @@
+// ======================================================
+// Pages :: Pricing Table
+// ======================================================
+
+.pricing-page {
+  &__title {
+    font-size: 40px;
+    font-weight: 100;
+    margin: 20px 0 15px;
+
+    @include breakpoint-down(phone) {
+      font-size: 32px;
+    }
+  }
+
+  &__desc {
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 29px;
+    margin: 0 0 50px;
+
+    @include breakpoint-down(phone) {
+      font-size: 15px;
+      line-height: 24px;
+    }
+  }
+}
+
+.pricing-tables {
+  $this: &;
+  margin: 30px 0 20px;
+
+  & > div {
+    padding: 0 10px;
+  }
+
+  &__item {
+    box-shadow: 0 0 4px 0 rgba($cl-black, .04);
+    border-radius: 3px;
+    border-top: 3px solid $cl-silver-2;
+    padding: 35px 20px;
+    background: $cl-white;
+    text-align: center;
+    margin: 0 0 20px;
+
+    &--primary {
+      border-color: $cl-primary;
+
+      svg {
+        fill: $cl-primary;
+      }
+    }
+
+    &--warning {
+      border-color: $cl-warning;
+
+      svg {
+        fill: $cl-warning;
+      }
+    }
+
+    &--danger {
+      border-color: $cl-danger;
+
+      svg {
+        fill: $cl-danger;
+      }
+    }
+
+    &--success {
+      border-color: $cl-success;
+
+      svg {
+        fill: $cl-success;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 300;
+
+    &:after {
+      content: '';
+      display: block;
+      border-top: 1px solid $cl-whitesmoke-4;
+      margin: 20px 0;
+    }
+  }
+
+  &__img {
+    margin-bottom: 15px;
+  }
+
+  &__price {
+    padding: 5px 0 20px;
+
+    .currency {
+      vertical-align: top;
+    }
+
+    .value {
+      font-size: 35px;
+      line-height: 40px;
+    }
+
+    .frequency {
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+
+  &__features {
+    list-style: none;
+    margin: 0 0 25px;
+    padding: 0;
+  }
+
+  &__features-item {
+    font-size: $font-size-base;
+    font-weight: 300;
+    line-height: 33px;
+  }
+
+  .button {
+    min-width: 120px;
+    height: 38px;
+    line-height: 36px;
+  }
+
+  &--color {
+    color: $cl-white;
+
+    .button {
+      background: transparent;
+      border-color: rgba($cl-white, .5);
+      border-width: 2px;
+      height: 40px;
+
+      &:hover {
+        background: rgba($cl-white, .1);
+        box-shadow: none;
+        border-color: $cl-white;
+      }
+    }
+  }
+}

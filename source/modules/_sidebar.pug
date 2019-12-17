@@ -1,0 +1,226 @@
+//-------------------------------------------------------
+//- Modules :: Sidebar
+//-------------------------------------------------------
+
+mixin rightSidebar()
+  nav.sidebar-right.js-sidebar-right
+    .tab-navigation
+      ul.nav.nav-tabs
+        li.nav-item
+          a.nav-link.active(href="#tab-chat" data-toggle="tab") Chat
+        li.nav-item
+          a.nav-link(href="#tab-todo" data-toggle="tab") Todo
+        li.nav-item
+          a.nav-link(href="#tab-settings" data-toggle="tab") Settings
+    .tab-panel
+      .tab-content
+        .tab-pane.chat.active(id="tab-chat")
+          .chat__contacts.js-chat-contact
+            .chat__section
+              .chat__wrapper.js-scroll-chat
+                .chat__content
+                  h2.chat__list Recent
+                  .contact-list
+                    .contact-user
+                      a.contact-user__link.js-chat-box(href="#")
+                        img.contact-user__avatar(src="../images/user-avatar-1.png", alt="")
+                        .contact-user__data
+                          span.contact-user__status.contact-user__status--away
+                          span.contact-user__name Claire Sassu
+                          span.contact-user__message Can you share the...
+                    .contact-user
+                      a.contact-user__link.js-chat-box(href="#")
+                        img.contact-user__avatar(src="../images/user-avatar-2.png", alt="")
+                        .contact-user__data
+                          span.contact-user__status
+                          span.contact-user__name Maggie jackson
+                          span.contact-user__message I confirmed the info.
+                    .contact-user
+                      a.contact-user__link.js-chat-box(href="#")
+                        img.contact-user__avatar(src="../images/user-avatar-3.png", alt="")
+                        .contact-user__data
+                          span.contact-user__status.contact-user__status--offline
+                          span.contact-user__name Joel King
+                          span.contact-user__message Ready for the meeti...
+                  h2.chat__list Contacts
+                  .contact-list
+                    .contact-user
+                      a.contact-user__link.js-chat-box(href="#")
+                        img.contact-user__avatar(src="../images/user-avatar-4.png", alt="")
+                        .contact-user__data.data-under
+                          span.contact-user__status
+                          span.contact-user__name Mike Bolthort
+                    .contact-user
+                      a.contact-user__link.js-chat-box(href="#")
+                        img.contact-user__avatar(src="../images/user-avatar-5.png", alt="")
+                        .contact-user__data.data-under
+                          span.contact-user__status
+                          span.contact-user__name Maggie jackson
+                    .contact-user
+                      a.contact-user__link.js-chat-box(href="#")
+                        img.contact-user__avatar(src="../images/user-avatar-6.png", alt="")
+                        .contact-user__data.data-under
+                          span.contact-user__status.contact-user__status--offline
+                          span.contact-user__name Jhon Voltemar
+              .chat__search
+                input(type="text" placeholder="Search...")
+                span
+                  i.zmdi.zmdi-search
+          .chat__window.js-chat-window
+            .chat__box
+              .chat__title
+                .chat__user
+                  img.chat__ava-user(src="../images/user-avatar-2.png", alt="")
+                  h2.chat__name-user Maggie jackson
+                  span.chat__status-user Active 1h ago
+                span.chat__back.js-chat-back
+                  i.zmdi.zmdi-chevron-left
+              .chat__message.js-scroll-chatbox
+                .chat__detail
+                  ul.js-chatbox
+                    li.friend
+                      .msg Hello
+                    li.self
+                      .msg Hi, how are you?
+                    li.friend
+                      .msg Good, I'll need support with my pc
+                    li.self
+                      .msg Sure, just tell me what is going on with your computer?
+                    li.friend
+                      .msg I don't know it just turns off suddenly
+              .chat__input
+                .inut-wrapper
+                  span
+                    i.zmdi.zmdi-camera
+                  input.js-input-chat(type="text" placeholder="Message..." autocomplete="off")
+                  span.js-send-message
+                    i.zmdi.zmdi-mail-send
+        .tab-pane.todo(id="tab-todo")
+          .todo__container
+            .todo__wrapper.js-scroll-todo
+              .todo__content
+                .todo__title Today
+                ul.todo__list
+                  -
+                    var todoToday = [
+                      {name: 'todo1', id: 'todo1', label: 'Initialize the project', checked: true},
+                      {name: 'todo2', id: 'todo2', label: 'Create the main structure'},
+                      {name: 'todo3', id: 'todo3', label: 'Updates changes to GitHub'},
+                    ]
+                  each val in todoToday
+                    li.todo__item
+                      span.delete.js-delete-todo
+                        i.zmdi.zmdi-delete
+                      +group-input-checkbox({
+                        name: val.name,
+                        id: val.id,
+                        label: val.label,
+                        checked: val.checked
+                      })
+                .todo__title Tomorrow
+                ul.todo__list
+                  -
+                    var todoTomorrow = [
+                      {name: 'todo4', id: 'todo4', label: 'Initialize the project'},
+                      {name: 'todo5', id: 'todo5', label: 'Create the main structure'},
+                      {name: 'todo6', id: 'todo6', label: 'Updates changes to GitHub'},
+                      {name: 'todo7', id: 'todo7', label: 'This task is too long to be displayed in a normal space!'},
+                    ]
+                  each val in todoTomorrow
+                    li.todo__item
+                      span.delete.js-delete-todo
+                        i.zmdi.zmdi-delete
+                      +group-input-checkbox({
+                        name: val.name,
+                        id: val.id,
+                        label: val.label,
+                      })
+            .todo__new-task
+              input(type="text" placeholder="Create new task...")
+              span
+                i.zmdi.zmdi-plus
+        .tab-pane.settings(id="tab-settings")
+          .settings__wrapper.js-scroll-setting
+            .settings__content
+              .settings__title General
+              ul.settings__list
+                li.settings__item
+                  +button-switch({
+                    id: 'switch-1',
+                    name: 'switch-1',
+                    size: 'sm',
+                    isOn: true
+                  })(class="settings__switch")
+                  span.settings__name Available
+                li.settings__item
+                  +button-switch({
+                    id: 'switch-2',
+                    name: 'switch-2',
+                    size: 'sm',
+                    isOn: true
+                  })(class="settings__switch")
+                  span.settings__name Enable notifications
+                li.settings__item
+                  +button-switch({
+                    id: 'switch-3',
+                    name: 'switch-3',
+                    size: 'sm',
+                    isOn: true
+                  })(class="settings__switch")
+                  span.settings__name Login with Facebook
+              .settings__title Notifications
+              ul.settings__list
+                li.settings__item
+                  +button-switch({
+                    id: 'switch-4',
+                    name: 'switch-4',
+                    size: 'sm',
+                  })(class="settings__switch")
+                  span.settings__name Email notifications
+                li.settings__item
+                  +button-switch({
+                    id: 'switch-5',
+                    name: 'switch-5',
+                    size: 'sm',
+                    isOn: true
+                  })(class="settings__switch")
+                  span.settings__name Project updates
+                li.settings__item
+                  +button-switch({
+                    id: 'switch-6',
+                    name: 'switch-6',
+                    size: 'sm',
+                    isOn: true
+                  })(class="settings__switch")
+                  span.settings__name New comments
+                li.settings__item
+                  +button-switch({
+                    id: 'switch-7',
+                    name: 'switch-7',
+                    size: 'sm',
+                  })(class="settings__switch")
+                  span.settings__name Chat messages
+              .settings__title Workflow
+              ul.settings__list
+                li
+                  +button-switch({
+                    id: 'switch-8',
+                    name: 'switch-8',
+                    size: 'sm',
+                  })(class="settings__switch")
+                  span.settings__name Deploy on commit
+
+mixin leftSidebar({page, link})
+  aside.sidebar-left
+    .sidebar-left__wrapper
+      .sidebar-left__content.js-sidebar-menu
+        +menu({page: page, link: link})
+      .sidebar-progress
+        .sidebar-progress__data
+          span.sidebar-progress__value 60%
+          span.sidebar-progress__name Current Project
+        .sidebar-progress__show
+          .progress
+            .progress-bar.sidebar-progress--primary(
+              style="width: 60%"
+            )

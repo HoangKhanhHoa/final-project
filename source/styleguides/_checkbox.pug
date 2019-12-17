@@ -1,0 +1,154 @@
+//-------------------------------------------------------
+//- Styleguides :: Checkbox
+//-------------------------------------------------------
+
+h2 Checkbox
+-
+  var checkbox = [
+    {name: 'checkbox', id: 'option-0', label: 'Option 1', value: 'option-1', checked: true},
+    {name: 'checkbox', id: 'option-1', label: 'Option 2', value: 'option-2'},
+    {name: 'checkbox', id: 'option-2', label: 'Option 3', value: 'option-3'},
+  ];
+
+  var checkboxInline = [
+    {name: 'checkbox-1', id: 'option-3', label: 'Option 1', value: 'option-1', checked: true, isInline: true},
+    {name: 'checkbox-1', id: 'option-4', label: 'Option 2', value: 'option-2', isInline: true},
+    {name: 'checkbox-1', id: 'option-5', label: 'Option 3', value: 'option-3', isInline: true},
+  ];
+
+  var checkboxColor = [
+    {name: 'checkbox-2', id: 'option-6', label: 'Option 1', value: 'option-1', checked: true, isColor: true},
+    {name: 'checkbox-2', id: 'option-7', label: 'Option 2', value: 'option-2', isColor: true},
+    {name: 'checkbox-2', id: 'option-8', label: 'Option 3', value: 'option-3', isColor: true},
+  ];
+
+.row
+  .col-6
+    .code-example
+      .demo
+        h4 Checkbox Normal
+        form.form-custom
+          each val in checkbox
+            +group-input-checkbox({
+              name: val.name,
+              id: val.id,
+              label: val.label,
+              checked: val.checked
+            })
+      pre
+        each val in checkbox
+          code
+            | +group-input-checkbox({
+            |   name: '#{val.name}',
+            |   id: '#{val.id}',
+            |   label: '#{val.label}',
+            | })
+            |
+  .col-6
+    .code-example
+      .demo
+        h4 Checkbox Inline
+        form.form-custom
+          each val in checkboxInline
+            +group-input-checkbox({
+              name: val.name,
+              id: val.id,
+              label: val.label,
+              checked: val.checked,
+            })(class="input-checkbox-custom--inline")
+      pre
+        each val in checkboxInline
+          code
+            | +group-input-checkbox({
+            |   name: '#{val.name}',
+            |   id: '#{val.id}',
+            |   label: '#{val.label}',
+            | })(class="input-checkbox-custom--inline")
+            |
+  .col-6
+    .code-example
+      .demo
+        h4 Checkbox Full Color
+        form.form-custom
+          each val in checkboxColor
+            +group-input-checkbox({
+              name: val.name,
+              id: val.id,
+              label: val.label,
+              checked: val.checked,
+              isColor: val.isColor
+            })
+      pre
+        each val in checkboxColor
+          code
+            | +group-input-checkbox({
+            |   name: '#{val.name}',
+            |   id: '#{val.id}',
+            |   label: '#{val.label}',
+            |   isColor: true,
+            | })
+            |
+  .col-6
+    .code-example
+      .demo
+        h4 Checkbox Validation
+        form.form-custom
+          +group-input-checkbox-valid({
+            name: 'checkbox-3',
+            id: 'checkbox-9',
+            label: 'Option 1',
+            checked: true
+          })
+          +group-input-checkbox-invalid({
+            name: 'checkbox-3',
+            id: 'checkbox-10',
+            label: 'Option 2',
+          })
+      pre
+        code
+          | +group-input-checkbox-valid({
+          |    name: 'checkbox-3',
+          |   id: 'checkbox-9',
+          |   label: 'Option 1',
+          |   checked: true,
+          | })
+          | +group-input-checkbox-invalid({
+          |   name: 'checkbox-3',
+          |   id: 'checkbox-10',
+          |   label: 'Option 2',
+          | })
+          |
+  .col-6
+    .code-example
+      .demo
+        h4 Checkbox Validation Full Color
+        form.form-custom
+          +group-input-checkbox-valid({
+            name: 'checkbox-4',
+            id: 'checkbox-11',
+            label: 'Option 1',
+            checked: true,
+            isColor: true,
+          })
+          +group-input-checkbox-invalid({
+            name: 'checkbox-4',
+            id: 'checkbox-12',
+            label: 'Option 2',
+            isColor: true,
+          })
+      pre
+        code
+          | +group-input-checkbox-valid({
+          |    name: 'checkbox-4',
+          |   id: 'checkbox-11',
+          |   label: 'Option 1',
+          |   checked: true,
+          |   isColor: true,
+          | })
+          | +group-input-checkbox-invalid({
+          |   name: 'checkbox-4',
+          |   id: 'checkbox-12',
+          |   label: 'Option 2',
+          |   isColor: true,
+          | })
+          |

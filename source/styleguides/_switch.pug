@@ -1,0 +1,117 @@
+//-------------------------------------------------------
+//- Styleguides :: Button Switch
+//-------------------------------------------------------
+
+-
+  var switchTypes = [
+    {id: 'switch-primay', name: 'switch-primay'},
+    {id: 'switch-success', name: 'switch-success', type: 'success'},
+    {id: 'switch-warning', name: 'switch-warning', type: 'warning'},
+    {id: 'switch-danger', name: 'switch-danger', type: 'danger'}
+  ];
+
+  var switchSizes = [
+    {id: 'switch-xs', name: 'switch-xs', size: 'xs'},
+    {id: 'switch-sm', name: 'switch-sm', size: 'sm'},
+    {id: 'switch-default', name: 'switch-default'},
+    {id: 'switch-lg', name: 'switch-lg', size: 'lg'},
+  ];
+
+  var switchYesNo = [
+    {id: 'switchYesNo-off', name: 'switchYesNo-off', isOn: false},
+    {id: 'switchYesNo-on', name: 'switchYesNo-on', isOn: true},
+  ];
+
+h2 Switch
+
+h4 Switch Off/On
+.row
+  .col-3
+    .code-example
+      .demo
+        +button-switch({
+          id: 'switch-off',
+          name: 'switch-off',
+        })
+      pre
+        code
+          | +button-switch({
+          |   id: 'switch-off',
+          |   name: 'switch-off',
+          | })
+  .col-3
+    .code-example
+      .demo
+        +button-switch({
+          id: 'switch-on',
+          name: 'switch-on',
+          isOn: true
+        })
+      pre
+        code
+          | +button-switch({
+          |   id: 'switch-no',
+          |   name: 'switch-no',
+          |   isOn: true
+          | })
+
+h4 Switch Type
+.row
+  each val in switchTypes
+    .col-3
+      .code-example
+        .demo
+          +button-switch({
+            id: val.id,
+            name: val.name,
+            type: val.type,
+            isOn: true
+          })
+        pre
+          code
+            | +button-switch({
+            |   id: '#{val.id}',
+            |   name: '#{val.name}',
+            |   type: '#{val.type}',
+            |   isOn: true
+            | })
+
+h4 Switch Size
+.row
+  each val in switchSizes
+    .col-3
+      .code-example
+        .demo
+          +button-switch({
+            id: val.id,
+            name: val.name,
+            size: val.size,
+            isOn: true
+          })
+        pre
+          code
+            | +button-switch({
+            |   id: '#{val.id}',
+            |   name: '#{val.name}',
+            |   size: '#{val.size}',
+            |   isOn: true
+            | })
+
+h4 Switch Yes/No
+.row
+  each val in switchYesNo
+    .col-3
+      .code-example
+        .demo
+          +yes-no-switch({
+            id: val.id,
+            name: val.name,
+            isOn: val.isOn
+          })
+        pre
+          code
+            | +yes-no-switch({
+            |   id: '#{val.id}',
+            |   name: '#{val.name}',
+            |   isOn: '#{val.isOn}'
+            | })

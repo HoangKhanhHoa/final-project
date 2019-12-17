@@ -1,0 +1,51 @@
+//-------------------------------------------------------
+//- Modules :: Checkbox
+//-------------------------------------------------------
+
+//- Input Checkbox
+mixin input-checkbox({name, id, value, checked})
+  input.checkbox-custom(
+    type='checkbox'
+    name= name ? name : null
+    value= value ? value : null
+    id= id ? id : null
+    checked= (checked === true) ? true : false
+  )&attributes(attributes)
+
+//- Group Input Checkbox
+mixin group-input-checkbox({ name, id, label, value, checked, isColor })
+  .input-checkbox-custom&attributes(attributes)
+    +input-checkbox({name, id, value, checked})
+    label.checkbox-label-custom(
+      for= id
+      class= isColor ? 'checkbox-label-color' : null
+    )= label
+
+//- Group Input Checkbox Disabled
+mixin group-input-checkbox-disabled({ name, id, label, value, checked, isColor })
+  .input-checkbox-custom&attributes(attributes)
+    +input-checkbox({name, id, value, checked})(
+      disabled
+    )
+    label.checkbox-label-custom(
+      for= id
+      class= isColor ? 'checkbox-label-color' : null
+    )= label
+
+//- Group Input Checkbox Valid
+mixin group-input-checkbox-valid({ name, id, label, value, checked, isColor })
+  .input-checkbox-custom.checkbox-valid&attributes(attributes)
+    +input-checkbox({name, id, value, checked})
+    label.checkbox-label-custom(
+      for= id
+      class= isColor ? 'checkbox-label-color' : null
+    )= label
+
+//- Group Input Checkbox Invalid
+mixin group-input-checkbox-invalid({ name, id, label, value, checked, isColor })
+  .input-checkbox-custom.checkbox-invalid&attributes(attributes)
+    +input-checkbox({name, id, value, checked})
+    label.checkbox-label-custom(
+      for= id
+      class= isColor ? 'checkbox-label-color' : null
+    )= label

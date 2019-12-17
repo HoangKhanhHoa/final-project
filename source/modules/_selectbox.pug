@@ -1,0 +1,37 @@
+//-------------------------------------------------------
+//- Modules :: Selecbox
+//-------------------------------------------------------
+
+//- Selectbox
+mixin selectbox({ id, options, disabled, isMultiple })
+  select.form-control(
+    id= id ? id: null
+    disabled= (disabled === true) ? true : false
+    multiple= (isMultiple === true) ? true : false
+  )&attributes(attributes)
+    each option, index in options
+      option(
+        value= option.value
+        selected= option.selected ? true : false
+        disabled= option.disabled ? true : false
+      )= option.display
+
+//- Group Selectbox
+mixin group-selectbox({ label, id, options, disabled, isMultiple})
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label(
+        for= id ? id : null
+      )= label
+    +selectbox({ id, options, disabled, isMultiple})
+
+//- Group Select2
+mixin group-selectbox-select2({ label, id, options, disabled, isMultiple})
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label(
+        for= id ? id : null
+      )= label
+    +selectbox({ id, options, disabled, isMultiple})(
+      class="js-select2"
+    )

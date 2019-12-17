@@ -1,0 +1,169 @@
+extends modules/layout/_page-default
+
+block head
+  +head('Beagle')
+
+block main
+  +header('Profile')
+  +rightSidebar()
+  +leftSidebar({
+    page: 'pages',
+    link: '08-page-profile.html'
+  })
+  .page-content
+    .page-body.container-fluid
+      .user-profile
+        .row
+          .col-lg-5
+            .user-profile__display
+              .user-profile__bg
+                img(src="../images/user-profile-cover.png", alt="")
+              .user-profile__main
+                .user-profile__avatar
+                  img(src="../images/avatar-150.png", alt="")
+                .user-profile__infor
+                  .user-profile__name Kristopher Donny
+                  .user-profile__account
+                    i.zmdi.zmdi-account
+                    | KDonny
+                .user-profile__details.row
+                  .col-4
+                    p Issues
+                    p 26
+                  .col-4
+                    p Commits
+                    p 26
+                  .col-4
+                    p Followers
+                    p 26
+            .card.user-profile__about-me
+              .card-header.card-header--border
+                |About Me
+                .card-subtitle I am a web developer and designer based in Montreal - Canada, I like read books, good music and nature.
+              .card-body
+                table
+                  tbody
+                    -
+                      var userInfor = [
+                        {icon: 'case', name: 'Ocupation', desc: 'Developer and designer'},
+                        {icon: 'cake', name: 'Birthday', desc: '16 September 1989'},
+                        {icon: 'smartphone-android', name: 'Mobile', desc: '(999) 999-9999'},
+                        {icon: 'globe-alt', name: 'Location', desc: 'Montreal, Canada'},
+                        {icon: 'pin', name: 'Website', desc: 'www.website.com'},
+                      ];
+                    each val in userInfor
+                      tr
+                        td.icon
+                          i.zmdi(class=`zmdi-${val.icon}`)
+                        td.item= val.name
+                        td= val.desc
+          .col-lg-7
+            .widget.widget--full
+              .widget__head.pb-5
+                .widget__tools
+                  i.icon.zmdi.zmdi-chevron-down
+                  i.icon.zmdi.zmdi-refresh-sync.js-loading-state
+                  i.icon.zmdi.zmdi-close
+                .widget__title Development Activity
+              .widget__body
+                .loading-available
+                  #bar-chart1(style="height: 180px")
+                  .spinner-load
+                    <svg width="40px" height="40px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                      <circle class="circle" fill="none" stroke-width="4" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                    </svg>
+                table.table.table-striped.table-hover
+                    thead
+                      tr
+                        th(style="width:37%") User
+                        th(style="width:36%") Commit
+                        th Date
+                        th.actions
+                    tbody
+                      -
+                        var devActivities = [
+                          {name: 'Penelope Thornton', action: 'Initial commit', date: 'Aug 16, 2018', img: 'user-avatar-6.png'},
+                          {name: 'Benji Harper', action: 'Main structure markup', date: 'Jul 28, 2015', img: 'user-avatar-4.png'},
+                          {name: 'Justine Myranda', action: 'Left sidebar adjusments', date: 'Jul 15, 2015', img: 'user-avatar-5.png'},
+                          {name: 'Sherwood Clifford', action: 'Topbar dropdown style', date: 'Jun 30, 2015', img: 'user-avatar-3.png'},
+                          {name: 'Kristopher Donny', action: 'Left sidebar adjusments', date: 'Jul 15, 2015', img: 'user-avatar.png'},
+                          {name: 'Adeline Shepherd', action: 'Topbar dropdown style', date: 'Jun 30, 2015', img: 'user-avatar-2.png'},
+                        ];
+                      each val in devActivities
+                        tr
+                          td.user-avatar
+                            img.d-none.d-md-inline(src="images/" + val.img, alt="")
+                            | #{val.name}
+                          td= val.action
+                          td= val.date
+                          td.actions
+                            a.icon(href="#")
+                              i.zmdi.zmdi-delete
+        .row
+          .col-lg-6
+            .card
+              .card-header.card-header--border
+                .card-title Current Progress
+                .card-subtitle This is the user current progress widget
+              .card-body
+                .row.user-progress
+                  .col-10
+                    .user-progress__title Bootstrap Admin
+                    .progress
+                      .progress-bar.progress-bar--primary(style="width: 78%")
+                  .col-2.pl-0.pl-sm-3
+                    .user-progress__value 78%
+                .row.user-progress
+                  .col-10
+                    .user-progress__title Custom Work
+                    .progress
+                      .progress-bar.progress-bar--primary(style="width: 57%")
+                  .col-2.pl-0.pl-sm-3
+                    .user-progress__value 57%
+                .row.user-progress
+                  .col-10
+                    .user-progress__title Clients Module
+                    .progress
+                      .progress-bar.progress-bar--primary(style="width: 45%")
+                  .col-2.pl-0.pl-sm-3
+                    .user-progress__value 45%
+                .row.user-progress
+                  .col-10
+                    .user-progress__title Email Templates
+                    .progress
+                      .progress-bar.progress-bar--danger(style="width: 36%")
+                  .col-2.pl-0.pl-sm-3
+                    .user-progress__value 36%
+                .row.user-progress
+                  .col-10
+                    .user-progress__title Plans Module
+                    .progress
+                      .progress-bar.progress-bar--danger(style="width: 30%")
+                  .col-2.pl-0.pl-sm-3
+                    .user-progress__value 30%
+                .row.user-progress
+                  .col-10
+                    .user-progress__title User Managemenet System
+                    .progress
+                      .progress-bar.progress-bar--danger(style="width: 21%")
+                  .col-2.pl-0.pl-sm-3
+                    .user-progress__value 21%
+          .col-lg-6
+            .card
+              .card-header.card-header--border
+                span.card-title Latest Activity
+                .card-subtitle This is a custom timeline widget
+              .card-body
+                ul.user-timeline
+                  li.user-timeline__item.user-timeline__latest
+                    .user-timeline__date Just Now
+                    .user-timeline__title Create New Page
+                    .user-timeline__description Quisque sed est felis. Vestibulum lectus nulla, maximus in eros non, tristique consectetur lorem. Nulla molestie sem quis imperdiet facilisis
+                  li.user-timeline__item
+                    .user-timeline__date Today - 15:35
+                    .user-timeline__title Back Up Theme
+                    .user-timeline__description Quisque sed est felis. Vestibulum lectus nulla, maximus in eros non, tristique consectetur lorem. Nulla molestie sem quis imperdiet facilisis
+                  li.user-timeline__item
+                    .user-timeline__date Yesterday - 10:41
+                    .user-timeline__title Changes In The Structure
+                    .user-timeline__description Quisque sed est felis. Vestibulum lectus nulla, maximus in eros non, tristique consectetur lorem. Nulla molestie sem quis imperdiet facilisis

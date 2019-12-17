@@ -1,0 +1,58 @@
+//-------------------------------------------------------
+//- Modules :: Fileupload
+//-------------------------------------------------------
+
+mixin button-file-upload({ name, id, label, isMultiple, typeColor })
+  .form-group.form-custom&attributes(attributes)
+    input.button-file-custom.js-input-file(
+      type="file"
+      name= name
+      id= id
+      multiple= (isMultiple === true) ? true : null
+    )
+    label.file-label-custom(
+      class= typeColor ? `button--${typeColor}` : null
+      for= id
+    )
+      i.zmdi.zmdi-upload
+      span= label
+
+//- File Upload Custom
+mixin file-upload-custom-before({ name, id, label, isMultiple, isButton })
+  .form-group.form-custom&attributes(attributes)
+    .input-group
+      .input-group-prepend
+        if isButton
+          button.btn.button.button--secondary Button
+        else
+          span.input-group-text Upload
+      .custom-file
+        input.custom-file-input.js-input-file(
+          type="file"
+          name= name
+          id= id
+        )
+        label.custom-file-label(
+          for= id
+        )
+          span= label
+
+//- File Upload
+mixin file-upload-custom-after({ name, id, label, isMultiple, isButton })
+  .form-group.form-custom&attributes(attributes)
+    .input-group
+      .custom-file
+        input.custom-file-input.js-input-file(
+          type="file"
+          name= name
+          id= id
+        )
+        label.custom-file-label(
+          for= id
+        )
+          span= label
+      .input-group-append
+        if isButton
+          button.btn.button.button--secondary Button
+        else
+          span.input-group-text Upload

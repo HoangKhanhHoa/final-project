@@ -1,0 +1,88 @@
+mixin header(title)
+  nav.navbar.navbar-expand.header
+    .header__logo
+      a.header__link(href="home.html")
+        img(src="../images/beagle-logo.png", alt="Beagle Logo")
+    .header__page-title
+      span= title
+    .header__right
+      .user.dropdown
+        a.user__toggle(href="#" data-toggle="dropdown")
+          img.user__avatar(src="../images/user-avatar.png", alt="")
+          span.user__name--mobile.dropdown-toggle Túpac Amaru
+        .dropdown-menu.user__option
+          .user__infor
+            .user__name Túpac Amaru
+            .user__status Available
+          a.dropdown-item(href="#")
+            i.zmdi.zmdi-face
+            |Account
+          a.dropdown-item(href="#")
+            i.zmdi.zmdi-settings
+            |Settings
+          a.dropdown-item(href="#")
+            i.zmdi.zmdi-power
+            |Logout
+      .sidebar-control.d-block.d-md-none
+        +buttons({
+          type: 'primary',
+          size: 'lg',
+          iconFont: 'menu'
+        })(class="js-left-sidebar-control")
+      ul.nav.nav-icons
+        li.nav-item.dropdown
+          a.nav-link.js-show-sidebar-right(href="#")
+            span.icon.zmdi.zmdi-settings
+        li.nav-item.dropdown.notification
+          a.nav-link(href="#" data-toggle="dropdown")
+            span.icon.zmdi.zmdi-notifications
+            span.notification__status
+          .dropdown-menu
+            .notification__title
+              |Notifications
+              span.badge.badge-pill 3
+            .notification__content.js-scroll-notification
+              ul.notification__list
+                -
+                  var notify = [
+                    {userName: 'Jessica Caruso', img: 'user-avatar-2.png', detail: ' accepted your invitation to join the team.', time: '2 min ago', isUnread: true},
+                    {userName: 'Joel King', img: 'user-avatar-3.png', detail: ' is now following you', time: '2 days ago'},
+                    {userName: 'John Doe', img: 'user-avatar-4.png', detail: ' is watching your main repository', time: '2 days ago'},
+                    {userName: 'Emily Carter', img: 'user-avatar-5.png', detail: ' is now following you', time: '5 days ago'}
+                  ];
+                each val in notify
+                  li.notification__item(
+                    class= val.isUnread ? 'notification__unread' : null
+                  )
+                    a.notification__link(href="#")
+                      .notification__img
+                        img(src="../images/" + val.img, alt="")
+                      .notification__infor
+                        .notification__text
+                          span= val.userName
+                          = val.detail
+                        .notification__date= val.time
+            .notification__footer
+              a.notification__see-all(href="#") View all notifications
+        li.nav-item.dropdown.connection
+          a.nav-link(href="#" data-toggle="dropdown")
+            span.icon.zmdi.zmdi-apps
+          .dropdown-menu
+            .connection__list
+              .row
+                -
+                  var connect = [
+                    {name: 'GitHub', img: 'github.png'},
+                    {name: 'Bitbucket', img: 'bitbucket.png'},
+                    {name: 'Slack', img: 'slack.png'},
+                    {name: 'Dribbble', img: 'dribbble.png'},
+                    {name: 'Mail Chimp', img: 'mail_chimp.png'},
+                    {name: 'Dropbox', img: 'dropbox.png'},
+                  ]
+                each val in connect
+                  .col-4.connection__item
+                    a.connection__link(href="#")
+                      img(src="../images/" + val.img, alt="")
+                      span= val.name
+            .connection__footer
+              a(href="#") More

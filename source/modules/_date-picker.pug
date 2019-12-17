@@ -1,0 +1,83 @@
+//-------------------------------------------------------
+//- Modules :: Calendar
+//-------------------------------------------------------
+
+mixin date-picker({ id, label, value, placeholder, readonly })
+  .form-group.form-custom&attributes(attributes)
+    if label
+      label(
+        for= id ? id : null
+      )= label
+
+    .input-group
+      input.form-control.js-date-picker(
+        data-date-format="dd MM yyyy - hh:ii"
+        id= id ? id : null
+        type="text"
+        value= value ? value : null
+        placeholder= placeholder ? placeholder : null
+        readonly= (readonly === true) ? true : false
+      )
+
+//- Date-picker Icon
+mixin date-picker-icon({ id, label, value, placeholder, readonly, dateFormat })
+  .form-group.form-custom.input-date-picker&attributes(attributes)
+    if label
+      label(
+        for= id ? id : null
+      )= label
+    .input-group(
+    )
+      input.form-control.js-date-picker(
+        id= id ? id : null
+        type="text"
+        data-date-format= dateFormat ? dateFormat : "dd MM yyyy - hh:ii"
+        value= value ? value : null
+        placeholder= placeholder ? placeholder : null
+        readonly= (readonly === true) ? true : false
+      )
+      .input-group-append
+        .input-group-text
+          i.zmdi.zmdi-calendar
+
+//- Date-picker Start View
+mixin date-picker-start-view({ id, label, value, placeholder, dateFormat, startView })
+  .form-group.form-custom.input-date-picker&attributes(attributes)
+    if label
+      label(
+        for= id ? id : null
+      )= label
+    .input-group(
+    )
+      input.form-control.js-date-picker(
+        id= id ? id : null
+        type="text"
+        data-view= startView ? startView : null
+        data-date-format= dateFormat ? dateFormat : "dd MM yyyy - hh:ii"
+        value= value ? value : null
+        placeholder= placeholder ? placeholder : null
+      )
+      .input-group-append
+        .input-group-text
+          i.zmdi.zmdi-calendar
+
+//- Date-picker Min View
+mixin date-picker-min-view({ id, label, value, placeholder, dateFormat, minView })
+  .form-group.form-custom.input-date-picker&attributes(attributes)
+    if label
+      label(
+        for= id ? id : null
+      )= label
+    .input-group(
+    )
+      input.form-control.js-date-picker(
+        id= id ? id : null
+        type="text"
+        data-min-view= minView ? minView :null
+        data-date-format= dateFormat ? dateFormat : "dd MM yyyy - hh:ii"
+        value= value ? value : null
+        placeholder= placeholder ? placeholder : null
+      )
+      .input-group-append
+        .input-group-text
+          i.zmdi.zmdi-calendar

@@ -1,0 +1,13 @@
+//-------------------------------------------------------
+//- Modules :: Buttons
+//-------------------------------------------------------
+
+mixin buttons({ text, type, size, isCircle, iconFont })
+  button.btn.button(
+    class= type ? `button--${type}` : null
+    class= size ? `button--${size}` : null
+    class= isCircle ? `button--rounded` : null
+  )&attributes(attributes)
+    if (iconFont !== '' && iconFont !== undefined)
+      i.icon.icon-left.zmdi(class= `zmdi-${iconFont}`)
+    | #{text}

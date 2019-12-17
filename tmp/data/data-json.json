@@ -1,0 +1,480 @@
+{
+	"datamenu": {
+		"listitem": [
+			{
+				"item": "Menu"
+			},
+			{
+				"link": "home.html",
+				"item": "Dashboard",
+				"icon": "zmdi zmdi-home",
+				"collapse": false
+			},
+			{
+				"link": "uielements",
+				"item": "UI Elements",
+				"icon": "zmdi zmdi-face",
+				"sub": [
+					{
+						"item": "Alerts",
+						"link": "ui-alerts.html"
+					},
+					{
+						"item": "Buttons",
+						"link": "ui-buttons.html"
+					},
+					{
+						"item": "Cards",
+						"link": "ui-cards.html",
+						"badge": true
+					},
+					{
+						"item": "Panels",
+						"link": "ui-panels.html"
+					},
+					{
+						"item": "General",
+						"link": "ui-general.html"
+					},
+					{
+						"item": "Modals",
+						"link": "ui-modals.html"
+					},
+					{
+						"item": "Notifications",
+						"link": "ui-notifications.html"
+					},
+					{
+						"item": "icon",
+						"link": "ui-icons.html"
+					},
+					{
+						"item": "Grid",
+						"link": "ui-grid.html"
+					},
+					{
+						"item": "Tabs & Accordions",
+						"link": "ui-tabs-accordions.html"
+					},
+					{
+						"item": "Nestable List",
+						"link": "ui-nestable-list.html"
+					},
+					{
+						"item": "Typography",
+						"link": "ui-typography.html"
+					},
+					{
+						"item": "Drag & Drop",
+						"link": "ui-dragdrop.html",
+						"badge": true
+					},
+					{
+						"item": "Sweetalert 2",
+						"link": "ui-sweetalert2.html",
+						"badge": true
+					}
+				]
+			},
+			{
+				"link": "chart",
+				"item": "Charts",
+				"icon": "zmdi zmdi-chart-donut",
+				"sub": [
+					{
+						"item": "Flot",
+						"link": "charts-flot.html"
+					},
+					{
+						"item": "Sparklines",
+						"link": "charts-sparklines.html"
+					},
+					{
+						"item": "Chart.js",
+						"link": "charts-chartjs.html"
+					},
+					{
+						"item": "Morris.js",
+						"link": "charts-morrisjs.html"
+					}
+				]
+			},
+			{
+				"link": "forms",
+				"item": "Forms",
+				"icon": "zmdi zmdi-dot-circle",
+				"sub": [
+					{
+						"item": "Element",
+						"link": "form-elements.html"
+					},
+					{
+						"item": "Validation",
+						"link": "form-validation.html"
+					},
+					{
+						"item": "Multiselect",
+						"link": "form-multiselect.html"
+					},
+					{
+						"item": "Wizard",
+						"link": "form-wizard.html"
+					},
+					{
+						"item": "Input Masks",
+						"link": "form-masks.html"
+					},
+					{
+						"item": "WYSIWYG Editor",
+						"link": "form-wysiwyg.html"
+					},
+					{
+						"item": "Multi Upload",
+						"link": "form-upload.html"
+					}
+				]
+			},
+			{
+				"link": "tables",
+				"item": "Tables",
+				"icon": "zmdi zmdi-border-all",
+				"sub": [
+					{
+						"item": "General",
+						"link": "tables-general.html"
+					},
+					{
+						"item": "Data Tables",
+						"link": "tables-datatables.html"
+					},
+					{
+						"item": "Tables Filters",
+						"link": "tables-filters.html",
+						"badge": true
+					}
+				]
+			},
+			{
+				"link": "pages",
+				"item": "Pages",
+				"icon": "zmdi zmdi-layers",
+				"sub": [
+					{
+						"item": "Blank Page",
+						"link": "01-blank-page.html"
+					},
+					{
+						"item": "Blank Page Header",
+						"link": "02-blank-page-header.html"
+					},
+					{
+						"item": "Login",
+						"link": "03-page-login.html"
+					},
+					{
+						"item": "Login v2",
+						"link": "04-page-login2.html"
+					},
+					{
+						"item": "404 Page",
+						"link": "05-page-404.html"
+					},
+					{
+						"item": "Sign Up",
+						"link": "06-page-sign-up.html"
+					},
+					{
+						"item": "Forgot Password",
+						"link": "07-page-forgot-password.html"
+					},
+					{
+						"item": "Profile",
+						"link": "08-page-profile.html"
+					},
+					{
+						"item": "Pricing Tables",
+						"link": "09-pricing-table.html"
+					},
+					{
+						"item": "Pricing Tables v2",
+						"link": "10-pricing-tablev2.html"
+					},
+					{
+						"item": "Timeline",
+						"link": "11-page-timeline.html"
+					},
+					{
+						"item": "Timeline v2",
+						"link": "12-page-timelinev2.html"
+					},
+					{
+						"item": "Invoice",
+						"link": "13-page-invoice.html",
+						"badge": true
+					},
+					{
+						"item": "Calendar",
+						"link": "pages-calendar.html"
+					},
+					{
+						"item": "Gallery",
+						"link": "pages-gallery.html"
+					},
+					{
+						"item": "Code Editor",
+						"link": "pages-code-editor.html",
+						"badge": true
+					},
+					{
+						"item": "Booking",
+						"link": "pages-booking.html",
+						"badge": true
+					},
+					{
+						"item": "Loaders",
+						"link": "pages-loaders.html",
+						"badge": true
+					},
+					{
+						"item": "AJAX Loader",
+						"link": "pages-ajax-loader.html",
+						"badge": true
+					}
+				]
+			},
+			{
+				"item": "Featured"
+			},
+			{
+				"item": "Email",
+				"link": "email",
+				"icon": "zmdi zmdi-inbox",
+				"sub": [
+					{
+						"item": "Inbox",
+						"link": "#"
+					},
+					{
+						"item": "Email Detail",
+						"link": "#"
+					},
+					{
+						"item": "Email Compose",
+						"link": "#"
+					}
+				]
+			},
+			{
+				"link": "layouts",
+				"item": "Layouts",
+				"icon": "zmdi zmdi-view-web",
+				"sub": [
+					{
+						"item": "Primary Header",
+						"link": "#"
+					},
+					{
+						"item": "Success Header",
+						"link": "#"
+					},
+					{
+						"item": "Warning Header",
+						"link": "#"
+					},
+					{
+						"item": "Danger Header",
+						"link": "#"
+					},
+					{
+						"item": "Search Input",
+						"link": "#"
+					},
+					{
+						"item": "Off Canvas Menu",
+						"link": "#"
+					},
+					{
+						"item": "Top Menu",
+						"link": "#",
+						"badge": true
+					},
+					{
+						"item": "Without Left Sidebar",
+						"link": "#"
+					},
+					{
+						"item": "Without Right Sidebar",
+						"link": "#"
+					},
+					{
+						"item": "Without Both Sidebars",
+						"link": "#"
+					},
+					{
+						"item": "Fixed Left Sidebar",
+						"link": "#"
+					},
+					{
+						"item": "Boxed Layout",
+						"link": "#",
+						"badge": true
+					},
+					{
+						"item": "Collapsible Sidebar",
+						"link": "#"
+					},
+					{
+						"item": "Sub Navigation",
+						"link": "#",
+						"badge": true
+					},
+					{
+						"item": "Mega Menu",
+						"link": "#",
+						"badge": true
+					}
+				]
+			},
+			{
+				"item": "Maps",
+				"link": "maps",
+				"icon": "zmdi zmdi-pin",
+				"sub": [
+					{
+						"item": "Google Maps",
+						"link": "#"
+					},
+					{
+						"item": "Vector Maps",
+						"link": "#"
+					}
+				]
+			},
+			{
+				"item": "Menu Levels",
+				"link": "menu-levels",
+				"icon": "zmdi zmdi-folder",
+				"sub": [
+					{
+						"item": "Level 1",
+						"link": "level1",
+						"sub": [
+							{
+								"item": "Level 2",
+								"link": "#"
+							},
+							{
+								"item": "Level 2",
+								"link": "level2",
+								"sub": [
+									{
+										"item": "Level 3",
+										"link": "#"
+									},
+									{
+										"item": "Level 3",
+										"link": "#"
+									}
+								]
+							}
+						]
+					},
+					{
+						"item": "Level 1",
+						"link": "level3",
+						"sub": [
+							{
+								"item": "Level 2",
+								"link": "#"
+							},
+							{
+								"item": "Level 2",
+								"link": "level4",
+								"sub": [
+									{
+										"item": "Level 3",
+										"link": "#"
+									},
+									{
+										"item": "Level 3",
+										"link": "#"
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"item": "Documentation",
+				"link": "documentation",
+				"icon": "zmdi zmdi-book",
+				"collapse": false
+			}
+		]
+	},
+	"pageList": {
+		"data": [
+			{
+				"title": "Style Guides",
+				"url": "styleguides"
+			},
+			{
+				"title": "Home Page",
+				"url": "home"
+			},
+			{
+				"title": "Blank Page",
+				"url": "01-blank-page"
+			},
+			{
+				"title": "Blank Page Header",
+				"url": "02-blank-page-header"
+			},
+			{
+				"title": "Page Login",
+				"url": "03-page-login"
+			},
+			{
+				"title": "Page Login v2",
+				"url": "04-page-login2"
+			},
+			{
+				"title": "Page 404",
+				"url": "05-page-404"
+			},
+			{
+				"title": "Page Sign Up",
+				"url": "06-page-sign-up"
+			},
+			{
+				"title": "Page Forgot Password",
+				"url": "07-page-forgot-password"
+			},
+			{
+				"title": "Profile",
+				"url": "08-page-profile"
+			},
+			{
+				"title": "Pricing Table",
+				"url": "09-pricing-table"
+			},
+			{
+				"title": "Pricing Table v2",
+				"url": "10-pricing-tablev2"
+			},
+			{
+				"title": "Timeline",
+				"url": "11-page-timeline"
+			},
+			{
+				"title": "Timeline v2",
+				"url": "12-page-timelinev2"
+			},
+			{
+				"title": "Invoice",
+				"url": "13-page-invoice"
+			}
+		]
+	}
+}
