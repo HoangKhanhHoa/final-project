@@ -21,10 +21,6 @@
 
   &.checkbox-valid {
     .checkbox-custom {
-      &:focus ~ .checkbox-label-custom:before {
-        box-shadow: 0 0 0 2px rgba($cl-success, .25);
-      }
-
       & ~ .checkbox-label-custom,
       &:checked ~ .checkbox-label-custom:after {
         color: $cl-success;
@@ -47,10 +43,6 @@
 
   &.checkbox-invalid {
     .checkbox-custom {
-      &:focus ~ .checkbox-label-custom:before {
-        box-shadow: 0 0 0 2px rgba($cl-danger, .25);
-      }
-
       & ~ .checkbox-label-custom,
       &:checked ~ .checkbox-label-custom:after {
         color: $cl-danger;
@@ -75,10 +67,6 @@
     position: absolute;
     z-index: -1;
     opacity: 0;
-
-    &:focus ~ .checkbox-label-custom:before {
-      box-shadow: 0 0 0 2px rgba($cl-gray-9, .4), 0 0 0 .15rem transparent;
-    }
 
     &:checked ~ .checkbox-label-custom:before {
       border-color: $cl-primary;

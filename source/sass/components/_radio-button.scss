@@ -37,12 +37,6 @@
     z-index: -1;
     opacity: 0;
 
-    //- Focus Radio-Button
-
-    &:focus ~ .radio-label-custom:before {
-      box-shadow: 0 0 0 2px rgba($cl-gray-9, .4), 0 0 0 2px transparent;
-    }
-
     //- Checked Radio-Button
 
     &:checked ~ .radio-label-custom:before {
@@ -119,10 +113,6 @@
     }
 
     .radio-custom {
-      &:focus ~ .radio-label-custom:before {
-        box-shadow: 0 0 0 2px rgba($cl-success, .25);
-      }
-
       &:checked ~ .radio-label-custom:before {
         background-color: $cl-white;
         border-color: $cl-success;
@@ -153,10 +143,6 @@
     }
 
     .radio-custom {
-      &:focus ~ .radio-label-custom:before {
-        box-shadow: 0 0 0 2px rgba($cl-danger, .25);
-      }
-
       &:checked ~ .radio-label-custom:before {
         background-color: $cl-white;
         border-color: $cl-danger;

@@ -2,13 +2,13 @@ mixin header(title)
   nav.navbar.navbar-expand.header
     .header__logo
       a.header__link(href="home.html")
-        img(src="../images/beagle-logo.png", alt="Beagle Logo")
+        img(src="images/beagle-logo.png", alt="Beagle Logo")
     .header__page-title
       span= title
     .header__right
       .user.dropdown
         a.user__toggle(href="#" data-toggle="dropdown")
-          img.user__avatar(src="../images/user-avatar.png", alt="")
+          img.user__avatar(src="images/user-avatar.png", alt="")
           span.user__name--mobile.dropdown-toggle Túpac Amaru
         .dropdown-menu.user__option
           .user__infor
@@ -56,7 +56,7 @@ mixin header(title)
                   )
                     a.notification__link(href="#")
                       .notification__img
-                        img(src="../images/" + val.img, alt="")
+                        img(src="images/" + val.img, alt="")
                       .notification__infor
                         .notification__text
                           span= val.userName
@@ -82,7 +82,7 @@ mixin header(title)
                 each val in connect
                   .col-4.connection__item
                     a.connection__link(href="#")
-                      img(src="../images/" + val.img, alt="")
+                      img(src="images/" + val.img, alt="")
                       span= val.name
             .connection__footer
               a(href="#") More

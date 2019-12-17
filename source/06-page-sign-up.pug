@@ -1,7 +1,7 @@
 extends modules/layout/_page-default
 
 block head
-  +head('Beagle')
+  +head('Sign Up')
 
 block main
   .container-fluid.main-content
@@ -11,7 +11,7 @@ block main
           img.login__img(src="images/beagle-logo.png", alt="Beagle Logo")
           span.login__desc Please enter your user information.
         .card-body
-          form(action="#" method="POST")
+          form(action="03-page-login.html" method="POST")
             .sign-up__title Sign Up
             +group-input-field({
               id: 'username',

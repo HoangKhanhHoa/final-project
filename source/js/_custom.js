@@ -47,17 +47,23 @@ $(document).ready(function() {
     var targetShow = e.target.closest('.js-show-sidebar-right');
     var targetSidebar = e.target.closest('.js-sidebar-right');
     if (targetShow !== null) {
-      $().dropdown('hide');
-      $('.js-sidebar-right').toggleClass('sidebar-right--show');
+      $(this).click();
     }
     else if (targetSidebar === null) {
       $('.js-sidebar-right').removeClass('sidebar-right--show');
     }
   });
 
+  $('.js-show-sidebar-right').on('click', function(e) {
+    e.preventDefault();
+    $().dropdown('hide');
+    $('.js-sidebar-right').toggleClass('sidebar-right--show');
+  });
+
   //- Hide/Show Chatbox
 
-  $('.js-chat-box').on('click', function() {
+  $('.js-chat-box').on('click', function(e) {
+    e.preventDefault();
     $('.js-chat-window').addClass('chat__window--show');
     $('.js-chat-contact').addClass('chat__contacts--hide');
   });
@@ -68,12 +74,12 @@ $(document).ready(function() {
   });
 
   //- Init Perfect Scrollbar
-
+  var scrollList = [];
   function createScroll(ele) {
     var eleScroll = document.querySelectorAll(ele);
     for (var i = 0; i < eleScroll.length; i++) {
       // eslint-disable-next-line no-undef
-      new PerfectScrollbar(eleScroll[i], {
+      scrollList[i] = new PerfectScrollbar(eleScroll[i], {
         wheelPropagation: false,
       });
     }
@@ -97,11 +103,11 @@ $(document).ready(function() {
       $(this).next().slideDown();
       $(this).attr('aria-expanded', true);
     }
-
-    if (isShow === 'true') {
+    else {
       $(this).attr('aria-expanded', false);
       $(this).next().slideUp();
     }
+    scrollList[5].update();
   });
 
   $(window).on('load', function() {
