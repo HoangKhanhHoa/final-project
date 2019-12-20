@@ -11,6 +11,15 @@
   z-index: z(under);
 }
 
+.custom-file-input {
+  &:focus ~ {
+    .custom-file-label {
+      box-shadow: none;
+      border-color: $cl-lightgray-9;
+    }
+  }
+}
+
 .file-label-custom {
   padding: 0 10px;
   font-size: 1rem;
