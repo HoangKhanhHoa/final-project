@@ -94,20 +94,27 @@ $(document).ready(function() {
     var hasChildOpen = $(this).parent().find('.child-two').siblings('.nav__link').attr('aria-expanded');
     if (isShow === 'false') {
       if (hasChildOpen === 'true') {
-        $(this).parent().find('.child-two').slideUp();
+        $(this).parent().find('.child-two').slideUp(function() {
+          scrollList[5].update();
+        });
         $(this).parent().find('.child-two').siblings('.nav__link').attr('aria-expanded', false);
       }
 
-      $(this).parent().siblings().children('.sub-menu').slideUp();
+      $(this).parent().siblings().children('.sub-menu').slideUp(function() {
+        scrollList[5].update();
+      });
       $(this).parent().siblings().children('.nav__link').attr('aria-expanded', false);
-      $(this).next().slideDown();
+      $(this).next().slideDown(function() {
+        scrollList[5].update();
+      });
       $(this).attr('aria-expanded', true);
     }
     else {
       $(this).attr('aria-expanded', false);
-      $(this).next().slideUp();
+      $(this).next().slideUp(function() {
+        scrollList[5].update();
+      });
     }
-    scrollList[5].update();
   });
 
   $(window).on('load', function() {
@@ -243,7 +250,7 @@ $(document).ready(function() {
 
   $('.js-send-message').click(function() {
     var mess = $('.js-input-chat').val();
-    if (typeof(mess) !== 'undefined' && mess !== '') {
+    if (typeof(mess) !== 'undefined' && mess !== '' && mess.trim() !== '') {
       var ele = '<li class="self"><div class="msg">' + mess + '</div></li>';
       $('.js-chatbox').append(ele);
       $('.js-input-chat').val('');

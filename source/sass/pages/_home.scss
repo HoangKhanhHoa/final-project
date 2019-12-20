@@ -23,6 +23,7 @@
       text-align: right;
 
       &__desc {
+        @include truncate-oneline;
         font-size: $font-size-base;
         line-height: 18px;
       }
@@ -104,6 +105,10 @@
         color: $cl-gray-6;
         text-transform: uppercase;
       }
+    }
+
+    @include breakpoint-down(phone) {
+      margin-top: 15px;
     }
   }
 
